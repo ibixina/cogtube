@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- YouTube embeds fail with error 153 when the referrer is stripped. -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="A video library limited to videos that Hacker News and other quality communities keep recommending, year after year.">
+  <meta name="color-scheme" content="dark light">
+  <title>CogTube</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f26a1b'/%3E%3Cpath d='M12 9.5v13L23 16z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Applied before first paint so a saved theme never flashes.
+    try {
+      var t = JSON.parse(localStorage.getItem('cogtube.v1') || '{}').theme;
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="topbar-start">
+      <button class="icon-btn" id="menu" aria-label="Toggle navigation" aria-expanded="true"></button>
+      <a class="logo" href="#/" aria-label="CogTube home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-word">Cog<b>Tube</b></span>
+      </a>
+    </div>
+    <form class="search" id="search" role="search" autocomplete="off">
+      <div class="search-field">
+        <input id="q" type="search" placeholder="Search talks, lectures, topics" aria-label="Search videos"
+               role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+        <kbd aria-hidden="true">/</kbd>
+        <ul id="suggest" role="listbox" hidden></ul>
+      </div>
+      <button class="search-go" type="submit" aria-label="Search"></button>
+    </form>
+    <div class="topbar-end">
+      <button class="icon-btn" id="theme" aria-label="Switch colour theme"></button>
+    </div>
+  </header>
+  <div class="scrim" id="scrim" hidden></div>
+  <nav class="sidebar" id="sidebar" aria-label="Primary"></nav>
+  <main id="main" tabindex="-1"></main>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p style="padding:96px 24px">CogTube needs JavaScript to run.</p></noscript>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

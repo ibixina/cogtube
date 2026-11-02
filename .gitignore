@@ -1,0 +1,8 @@
+# Raw crawl output: about 250 MB, and can be regenerated with the pipeline.
+data-raw/
+node_modules/
+__pycache__/
+# Personal Claude export: private chats, never commit.
+private/
+
+manifest-13cc89fa-9102-43e0-9730-6b5b081a4772-1793583629-7eae11f6-2026-11-02-01-41-20.json

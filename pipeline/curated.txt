@@ -1,0 +1,425 @@
+# Hand-picked from the videos that cleared the repetition bar.
+# Format: video id | topics, primary first | fragment the real YouTube title must contain
+# The build fails if a fragment doesn't match, which catches any mistyped ID.
+# Removed because YouTube reports them as embeddable but refuses to play them in an embed:
+# 5SaFTm2bcac (Amen break), UY9P0QSxlnI (History of Europe), z6yL0_sDnX0 (Connections ep. 4),
+# B4Kn3djJMCE (Video feedback).
+
+# Mind & Perception
+vJG698U2Mvo | mind | selective attention
+MFzDaBzBlL0 | mind | Backwards Brain Bicycle
+HU6LfXNeQM4 | mind | Perception Deception
+G-lN8vWm3m0 | mind,signals | audio illusion
+lyu7v7nWzfo | mind | Conscious Reality
+oYp5XuGYqqY | mind | see reality
+n8m7lFQ3njk | mind | Analogy as the Core
+CjVQJdIrDJ0 | mind | Thinking, Fast and Slow
+4Q_mY54hjM0 | mind | Intuition Pumps
+fjbWr3ODbAo | mind | illusion of consciousness
+TTFoJQSd48c | mind,brain | If Brains are Computers
+rHKwIYsPXLg | mind,ml | Consciousness in Artificial Intelligence
+wfYbgdo8e-8 | mind,brain | Silent Stranger
+nsjDnYxJ0bo | mind,brain | Movie reconstruction
+wh4aWZRtTwU | mind | color is weird
+LKnqECcg6Gw | mind,signals | Computer Color is Broken
+gMqZR3pqMjg | mind | color names
+xAoljeRJ3lU | mind,research | Better Default Colormap
+WRdJCFEqFTU | mind,ml | Computational Meta-Psychology
+muCPjK4nGY4 | mind,signals | Speaking Piano
+IUDTlvagjJA | mind,signals | Virtual Barber Shop
+3-son3EJTrU | mind | Language as a Window
+hdUbIlwHRkY | mind | Concept of Language
+D5in5EdjhD0 | mind | machine, the ghost
+3wfNl2L0Gf8 | mind | Chomsky & Michel Foucault
+NiTsduRreug | mind | Language Acquisition
+snAhsXyO3Ck | mind | One Room
+VT9i99D_9gI | mind | Shocking illusion
+oWfFco7K9v8 | mind | Ambiguous Cylinder
+ZerUbHmuY04 | mind,brain | water displacement by a crow
+meiU6TxysCg | mind,brain | Two Monkeys
+
+# Brain & Behavior
+NOAgplgTxfc | brain | Sapolsky On Depression
+NNnIGh9g6fA | brain | Human Behavioral Biology
+D9H9qTdserM | brain | Why Zebras
+GRYcSuyLiJk | brain | Biology of Humans
+4WwAQqWUkpI | brain | Religiosity
+RjD1aLm4Thg | brain,mind | What Bodies Think About
+XheAMrS8Q1c | brain | electrical blueprints
+Z-9rLlFgcm0 | brain | Anatomical decision-making
+YnObwxJZpZc | brain,mind | Cognitive Light Cones
+L43-XE1uwWc | brain | Robot Cancer
+p3lsYlod5OU | brain | Xenobots
+bEXefdbQDjw | brain | Rat Neurons
+V2YDApNRK3g | brain | Human Neurons
+NIu_dJGyIQI | brain,stats,mind | Free Energy Principle
+DleXA5ADG78 | brain,ml | Brains, Sex, and Machine Learning
+4y43qwS8fl4 | brain,ml | Building Brains
+izO2_mCvFaw | brain,ml | What the Brain says
+-EVqrDlAqYo | brain,ml | Thousand Brains
+ZKE8qK9UCrU | brain | Neuronal Signaling
+kUfF2MTnqAw | brain | Brain Without Oxygen
+1Nh_vxpycEA | brain | Stale Air
+awADEuv5vWY | brain | inside our bodies and brains
+Nwew5gHoh3E | brain,mind | evolution of the eye
+8hAw1z8GdE8 | brain | Healthy Sleep
+
+# Bayes, Stats & Models
+HZGCoVF3YvM | stats | Bayes theorem
+lG4VkPoG3ko | stats | medical test paradox
+8idr1WZ1A7Q | stats | Binomial distributions
+R13BD8qKeTg | stats | Bayesian Trap
+BrK7X_XlGB8 | stats | Bayesian thinking
+FdnMWdICdRs | stats | Statistical Rethinking
+pHsuIaPbNbY | stats | Hamiltonian Monte Carlo
+Iq9DzN6mvYA | stats | Statistics for Hackers
+5Dnw46eC-0o | stats | Without the Agonizing Pain
+5OL1RqHrZQ8 | stats,research | Dance of the p Values
+1tSqSMOyNFE | stats | Fooled By Statistics
+TGGGDpb04Yc | stats | Statistical Thinking
+KbB0FjPg0mw | stats | Probability and Counting
+HUti6vGctQM | stats | Correlation CAN Imply
+cUqoHQDinCM | stats,ml | weirdest paradox
+BCiZc0n6COY | stats,signals | Information Theory
+v68zYyaEmEA | stats,math | Wordle
+gxAaO2rsdIs | stats,games | Simulating an epidemic
+STFcvzoxVw4 | stats,ml | Statistical Learning
+McLq1hEq3UY | stats,math | Convex Optimization
+
+# Neural Networks
+aircAruvnKk | ml | But what is a neural network
+IHZwWFHWa-w | ml | Gradient descent
+Ilg3gGewQ5U | ml | Backpropagation, intuitively
+tIeHLnjs5U8 | ml | Backpropagation calculus
+wjZofJX0v4M | ml | Transformers, the tech
+eMlx5fFNoYc | ml | Attention in transformers
+VMj-3S1tku0 | ml | micrograd
+PaCmpygFfXo | ml | makemore
+q8SA3rM6ckI | ml | Backprop Ninja
+kCc8FmEb1nY | ml | build GPT
+zjkBMFhNj_g | ml | Intro to Large Language Models
+iDulhoQ2pro | ml | Attention Is All You Need
+VdIURAu1-aU | ml | Recent Developments in Deep Learning
+ZmNOAtZIgIk | ml,mind | Unsupervised Feature Learning
+5MdSE-N0bxs | ml | physics and deep learning
+S27pHKBEp30 | ml | LSTM is dead
+w6Pw4MOzMuo | ml,math | Geometric Deep Learning
+1aXOXHA7Jcw | ml,math | Random Matrices
+-yX1SYeDHbg | ml | Alex Graves
+FwFduRA_L6Q | ml | Convolutional Network Demo
+NfnWJUyUJYU | ml | CS231n
+vT1JzLTH4G4 | ml | Convolutional Neural Networks for Visual
+x7psGHgatGM | ml,research | alchemy
+lhYGXYeMq_E | ml,research | Why Greatness Cannot Be Planned
+1CIpzeNxIhU | ml | AI Image Generators
+UzxYlbK2c7E | ml | Machine Learning (Stanford)
+y57wwucbXR8 | ml | Software 2
+Yf1o0TQzry8 | ml | next-token prediction
+13CZPWmke6A | ml | Ilya Sutskever
+3FIo6evmweo | ml,rl | Schmidhuber
+bxe2T-V8XRs | ml | Neural Networks Demystified
+cNxadbrN_aI | ml | Perceptron
+bVQUSndDllU | ml | Neural Networks
+hEUO6pjwFOo | ml | Orthogonality Thesis
+ZeecOKBus3Q | ml,rl | Instrumental Convergence
+bJLcIBixGj8 | ml,rl | Mesa-Optimizers
+5eqRuVp65eY | ml | can't cross this line
+qbIk7-JPB2c | ml | Sparks of AGI
+AgkfIQ4IGaM | ml,mind | Deep Visualization Toolbox
+3wMKoSRbGVs | ml,mind | Cyc
+bZQun8Y4L2A | ml | State of GPT
+vq2nnJ4g6N0 | ml | without a PhD
+3JQ3hYko51Y | ml | Neural Network 3D Simulation
+
+# Learning Agents
+2pWv7GOvuf0 | rl | Reinforcement Learning
+WXuK6gekU1Y | rl,chess | AlphaGo
+EfGD2qveGdQ | rl | Deepmind artificial intelligence
+qv6UVOQ0F44 | rl,games | MarI/O
+xOCurBYI_gY | rl,games | learns to play classic NES
+DcYLT37ImBY | rl,games | Pokemon
+Dw3BZ6O_8LY | rl,games | Trackmania
+Lu56xVlZ40M | rl | Hide and Seek
+cUTMhmVh1qs | rl | StarCraft
+R9c-_neaxeU | rl,math | MENACE
+_9_AEVQ_p74 | rl | Theseus
+udPY5rQVoW0 | rl,ml | GAN Theft Auto
+N3tRFayqVtk | rl,games | They Evolved
+PYylPRX6z4Q | rl | Reward Modelling
+Ul0Gilv5wvY | rl,games | Character Control
+
+# Math, Visually
+fNk_zzaMoSs | math | Essence of linear algebra
+PFDu9oVAE-g | math | Eigenvectors and eigenvalues
+Ip3X9LOh2dk | math | The determinant
+WUvTyaaNkzM | math | essence of calculus
+spUNpyF58BY | math,signals | Fourier Transform
+r6sGWTCMz2k | math,signals | Fourier series
+MBnnXbOM5S4 | math,signals | uncertainty principle
+sD0NjbwqlYw | math | Riemann zeta
+d4EgbgTm0Bg | math | Quaternions
+mH0oCDa74tE | math | monster
+mvmuCPvRoWQ | math | Euler's formula
+EmKQsSDlaa4 | math,signals | holograms
+X8jsijhllIA | math,signals | Hamming codes
+gB9n2gHsHN4 | math | Fractals
+3s7h2MHQtxc | math | Hilbert's Curve
+XFDM1ip5HdU | math | invent math
+VYQVlVoWoPY | math | lie using visual proofs
+zwAD6dRSVyI | math | 10-dimensional
+jsYwFizhncE | math | colliding blocks
+OmJ-4B-mS-Y | math | Map of Mathematics
+HeQX2HjkcNo | math | Fundamental Flaw
+T647CGsuOVU | math | Imaginary Numbers
+I8LbkfSSR58 | math | Category Theory
+UwTQdOop-nU | math | Visual Group Theory
+f5liqUk0ZTw | math | Tensor
+QtJ77qsLrpw | math | Droste effect
+lWZ2Bz0tS-s | math,mind | Godel Escher Bach
+ZYj4NkeGPdM | math | HACKENBUSH
+04ERSb06dOg | math | Noether
+zcqZHYo7ONs | math | Bell's Theorem
+ZK3O402wf1c | math | Linear Algebra
+sqEyWLGvvdw | math | Real Analysis
+eis11j_iGMs | math,ideas | Lambda Calculus
+1cRFfYQYGxE | math,ideas | 4000 Years of Papers
+48sCx-wBs34 | math | Never Repeats
+E8kUJL04ELA | math,games | Game of Life
+92WHN-pAFCs | math,ideas | Halting Problem
+GNKFSpJIBO0 | math | Juggling
+
+# Systems & OS
+tc4ROCJYbm0 | systems | UNIX Operating System
+XvDZLjaCJuw | systems | Making Computers Easier
+36myc8wQhLo | systems | Time for Operating Systems
+-zRN7XLCRhc | systems | illumos
+tDacjrSCeq4 | systems | Shouting in the Datacenter
+r-TLSBdHe1A | systems | Performance Matters
+rX0ItVEVjHc | systems,games | Data-Oriented Design
+WDIkqP4JbkE | systems | Cpu Caches
+OFgxAFdxYAQ | systems | Modern Hardware
+bSkpMdDe4g4 | systems | What Has My Compiler
+LnzuMJLZRdU | systems | 6502
+yl8vPW5hydQ | systems | read machine code
+dXdoim96v5A | systems | control logic
+sTu3LwpF6XI | systems | logic gates
+DXvAlwMAxiA | systems | How a transistor works
+g_koa00MBLg | systems | hardware timers
+l7rce6IQDWs | systems | worst video card
+wdgULBpRoXk | systems | USB keyboard
+NGFhc8R_uO4 | systems | Indistinguishable From Magic
+bx3KuE7UjGA | systems | MINIX 3
+KXuZi9aeGTw | systems | User-level threads
+lJ8ydIuPFeU | systems,research | Measure Latency
+H62hZJVqs2o | systems | Voyager
+NRoUC9P1PmA | systems | ZFS
+0IQlpFWTFbM | systems | kernel hacker
+FaILnmUYS_U | systems,chess | only runs Tetris
+_2NI6t2r_Hs | systems | History of Unix
+ds77e3aO9nA | systems | History of BSD
+EY6q5dv_B-o | systems | Ken Thompson
+O9upVbGSBFo | systems | Brian Kernighan
+HyzD8pNlpwI | systems,games | Ultimate Game Boy
+4XpnKHJAok8 | systems | Linus Torvalds on git
+Wb_vD3XZYOA | systems | eBPF
+QZwneRb-zqA | systems | How Computers Work
+s1i-dnAH9Y4 | systems,history | Mechanical Computer
+MC1EKLQ2Wmg | systems | Mechanical Sympathy
+Nb2tebYAaOA | systems | Jim Keller
+_6sh097Dk5k | systems,history | ARM Microprocessor
+_eSAF_qT_FY | systems | Hardware Backdoors
+JcJSW7Rprio | systems | Harder Drive
+RIctzAQOe44 | systems | Wayland
+cQP8WApzIQQ | systems | Lecture 1: Introduction
+RZUDEaLa5Nw | systems,games | Game Boy
+HgtRAbE1nBM | systems | Operating System in Rust
+kZRE7HIO3vk | systems | Thirty Million Line
+ZSRHeXYDLko | systems,ideas | Preventing the Collapse
+
+# Big Computing Ideas
+yJDv-zdhzMY | ideas,history | Mother of All Demos
+PUv66718DII | ideas | Inventing on Principle
+8pTEmbeENF4 | ideas | Future of Programming
+oKg1hTOQXoY | ideas | computer revolution
+FvmTSpJU-Xc | ideas | Normal Considered Harmful
+SxdOUGdseq4 | ideas | Simple Made Easy
+f84n5oFoZBc | ideas,research | Hammock Driven
+HB5TrK7A4pI | ideas | Don't Know How to Compute
+lKXe3HUG2l4 | ideas | The Mess We're In
+8Ab3ArE8W3s | ideas | Dead Programs
+2Op3QLzMgSY | ideas | Structure and Interpretation
+IOiZatlZtGU | ideas,math | Propositions as Types
+_ahvzDzKdB0 | ideas | Growing a Language
+EKWGGDXe5MA | ideas | Feynman Computer Science
+0fKBhvDjuy0 | ideas,math | Powers of Ten
+ROor6_NGIWU | ideas | Language of the System
+2V1FtfBDsLU | ideas | Effective Programs
+JvBT4XBdoUE | ideas,systems | Soul of Erlang
+ZTC_RxWN_xo | ideas,history | Secret History of Silicon Valley
+umJsITGzXd0 | ideas,history | Knowledge Navigator
+uknEhXyZgsg | ideas,history | Smalltalk
+AnrlSqtpOkw | ideas | Ted Nelson
+N9c7_8Gp7gI | ideas | Rethinking CS Education
+7jiPeIFXb6U | ideas,research | don't like notebooks
+
+# Doing Research
+a1zDuOPkMSw | research | You and Your Research
+AD4b-52jtos | research | Learning to Learn
+Unzc731iCUY | research | How to Speak
+vtIzMaLkCaM | research | Craft of Writing
+aFwVf5a3pZM | research | Writing Beyond the Academy
+OV5J6BfToSw | research,mind | Style and Writing
+EYPapE-3FRw | research | Scientific Method
+lFIYKmos3-s | research | Names Don't Constitute
+tWr39Q9vBgo | research | Pseudoscience
+NM-zWTU7X-k | research | Knowing versus Understanding
+36GT2zI8lVA | research | Why
+P1ww1IXRfTA | research,math | FUN TO IMAGINE
+Cj4y0EUlU-Y | research,mind | How to think
+42QuXLucH3Q | research,stats | Most Published Research Wrong
+dEaecUuEqfc | research,math | Quantum Conspiracy
+jbkSRLYSojo | research,stats,history | 200 Countries
+ukLnPbIffxE | research,mind | Evidence-based revision
+g1ib43q3uXQ | research,mind | How to teach programming
+uEFrE6cgVNY | research,stats | Evidence-Oriented Programming
+
+# Game Dev & Simulation
+Fy0aCDmgnxg | games | Juice it or lose it
+AJdEqssNZ-U | games | art of screenshake
+LNidsMesxSE | games | Procedural Animation
+KPoeNZZ6H4s | games,math | Procedural Animations
+JjDsP5n2kSM | games | program independent games
+W3aieHjyNvw | games,systems | Netcode
+aMcJ1Jvtef0 | games | 8 Bit
+ZWQ0591PAxM | games,systems | 40 Kilobytes
+ataGotQ7ir8 | games,rl | Pac-Man Ghost AI
+MtzCLd93SyU | games,mind | Psychology of Game Design
+scS3f_YSYO0 | games | Will Wright
+IJcuQQ1eWWI | games,rl | Playing to Lose
+VdqhHKjepiE | games | RimWorld
+VscdPA6sUkc | games,history | Diablo
+p8u_k2LIZyo | games,math | Fast Inverse Square Root
+2SuvO4Gi7uY | games | Wave Function Collapse
+X-iSQQgOd1A | games,stats | Slime Simulations
+bqtqltqcQhw | games,stats | Boids
+RKT-sKtR970 | games,signals | Simulating an Entire Car Engine
+kEB11PQ9Eo8 | games,math | Non-Euclidean
+wt-iVFxgFWk | games,systems | John Carmack Keynote
+HQYsFshbkYw | games,systems | Doom-style
+aVwxzDHniEw | games,math | Bézier
+sJFnWZH5FXc | games,systems | Racing the Beam
+sw0VfmXKq54 | games,systems | Prince of Persia
+KFNxJVTJleE | games,stats | Ultima Online
+kpk2tdsPh0A | games | Rolling Rocks
+uHQ4WCU1WQc | games,history | First Video Game
+xP5-iIeKXE8 | games,math | Life in life
+7-97RhAZhXI | games,ml | Lenia
+Kk2MH9O4pXY | games,systems | GAME of LIFE
+plVk4NVIUh8 | games,brain | Mega-Plate
+8--5LwHRhjk | games,math | Painting a Character
+BFld4EBO2RE | games,math | Landscape
+ZH2wGpEZVgE | games | Level 1-1
+sLqXFF8mlEU | games | Real-World Geographic
+72y2EC5fkcE | games,systems | Tomorrow Corporation
+G05M_Y6NQVM | games | Verlet
+qWFScmtiC44 | games,research | Future of Education
+
+# Chess & Tetris
+DpXy041BIlA | chess,rl | Elo World
+U4ogK0MIzqk | chess,games | Coding Adventure: Chess
+zhkTHkIZJEc | chess,rl | Deep Thinking
+eC1BAcOzHyY | chess,mind | Memory
+ZBnSU-LX1ss | chess | Mozart of Chess
+LZgyVadkgmI | chess,systems | Lichess founder
+crKNBSpO2_I | chess,systems | Lichess
+R3By_rdwxSg | chess,systems | CHESS
+wTJI_WuZSwE | chess,math | impossible chessboard
+o1dgrvlWML4 | chess,research | Rules of Chess
+evZmpsl3jI0 | chess,mind | Derren Brown
+_fQtxKmgJC8 | chess,history | Story of Tetris
+n-BZ5-Q48lE | chess,mind | NES Tetris
+
+# Signals, Sound & Music
+cIQ9IXSUzuM | signals | Digital Show and Tell
+h7apO7q16V0 | signals,math | Fast Fourier Transform
+0me3guauqOU | signals,mind | JPEG
+DovunOxlY1k | signals | Wave Behavior
+vvr9AMWEU-c | signals | Modem Handshake
+FKXOucXB4a8 | signals,mind | Visual Microphone
+ONZcjs1Pjmk | signals,mind | Eulerian Video Magnification
+EtsXgODHMWk | signals | trillion frames
+1Hqm0dYKUx4 | signals | Tune a Piano
+n02tImce3AE | signals | Electric Guitar
+wcBEOcPtlYk | signals | Guitar Amplifier
+rgaTLrZGlk0 | signals | music theory
+UHTF1-IhuC0 | signals,mind | overtone singing
+fAxHlLK3Oyk | signals | Sitting In A Room
+roBkg-iPrbw | signals,history | Trackers
+atvtBE6t48M | signals | Synthesis
+tiKCORN-6m8 | signals | Microtonal
+Qg3XOfioapI | signals,ideas | Kolmogorov music
+Mfsnlbd-4xQ | signals,ideas | Functional Composition
+zrpUDuUtxPM | signals,mind | Sound reproduction
+qJ7ZAUjsycY | signals | How GPS Works
+igrN_wd_g74 | signals | Radar
+aqqEYz38ens | signals | Wifi Signal Mapping
+C7JQ7Rpwn2k | signals | Sensor Fusion
+CaCcOwJPytQ | signals,stats | Kalman Filter
+r18Gi8lSkfM | signals,math | Fourier Transform
+Y9FZ4igNxNA | signals,mind | Fourier Optics
+wcRB3TWIAXE | signals | Fourier Optics
+
+# History
+bRcu-ysocX4 | history | 1177 BC
+d2lJUOv0hLA | history | Sumerians
+B965f8AcNbw | history | Bronze Age Collapse
+xuCn8ux2gbs | history | history of the entire world
+Mh5LY4Mz15o | history | history of japan
+Yocja_N5s1I | history | Agricultural Revolution
+PfYYraMgiBA | history,mind | Cuneiform
+s_fkpZSnz2I | history | Ark Before Noah
+WZskjLq040I | history,games | Royal Game of Ur
+RLPVCJjTNgk | history,math | Antikythera
+czgOWmtGVGs | history | Human Era
+BDqvzFY72mg | history | Power and Politics
+dW8Cy6WrO94 | history,math | Pythagoras
+uD4izuDMUQA | history | End of Time
+
+# Added after reading the themes in the claude.ai artifact list
+xRel1JKOEbI | mind,brain | Neuroscience of Consciousness
+FaC2RXBss2c | mind,brain | eye movement
+z2exxj4COhU | mind | Cognitive Science and Design
+IZefk4gzQt4 | mind | From Bacteria to Bach
+lKQ0yaEJjok | mind,ml | From Computation to Consciousness
+uH0aihGWB8U | mind,signals | sonar
+kRB6Qzx9oXs | brain | Whole Brain Emulation
+6ufPpZDmPKA | brain,ml | Hierarchical Temporal Memory
+CAOnSbDSaOw | brain | Limbic System
+dO4TPJkeaaU | ml,stats | Compression for AGI
+SGZ6BttHMPw | ml | Feedforward neural network
+3liCbRZPrZA | ml,stats | SVM
+ld28AU7DDB4 | rl,chess | Classic Games
+9EN_HoEk3KY | rl | Meta-Learning and Self-Play
+JBgG_VSP7f8 | rl,games | Evolved Virtual Creatures
+OTkq4OsG_Yc | stats,chess | Poker Theory
+Kv1Hiv3ox8I | signals | JPEG
+
+# Added after reading the claude.ai export (memories and conversation titles)
+-pb3z2w9gDg | mind,ml | Society of Mind
+ePA1zq56J1I | mind,math | Hofstadter
+tmx2tpcdKZY | mind,math | Free Will
+BOvAbjfJ0x0 | mind,stats | Evolution of Cooperation
+_njf8jwEGRo | brain,math | Chaos and Reductionism
+wPiLLplofYw | brain | Decerebrate Cat
+21qPOReu4FI | math,ideas | Constructive Mathematics
+tYjmiT422yQ | math | Incompleteness
+b1Wu8kTngoE | math | Sheaves
+VxINoKFm-S4 | math,ideas | Dependent Types
+LE0SSLizYUI | math,ideas | Computational Type Theory
+YX40hbAHx3s | math,ideas | Complexity Zoo
+6OPsH8PK7xM | math,ideas | P vs NP
+msp2y_Y5MLE | math,ideas | P vs NP
+0jrybODBUpA | math,ideas | Scott Aaronson
+mScpHTIi-kM | stats,games | game theory
+3LVeEjsn8Ts | systems,ideas | Turing Award Lecture
+ajv46BSqcK4 | games,math | GJK

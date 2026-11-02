@@ -1,0 +1,9 @@
+{
+  "name": "cogtube",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A video library limited to videos that Hacker News and other quality communities keep recommending.",
+  "scripts": {
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1"
+  }
+}
