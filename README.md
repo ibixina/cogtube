@@ -25,10 +25,13 @@ The `#/about` page in the site explains the rules and limits, with live numbers.
 | 5 | `pipeline/05_quote_candidates.py` | Pulls possible quotes from comments for human review |
 | 6 | `pipeline/06_build.py` | Re-checks citations against HN's official API and writes `data.js` |
 
-Run the scripts with `python3 -I pipeline/<script>`. Two files hold the human decisions:
+Run the scripts with `python3 -I pipeline/<script>`. Four files hold the human decisions:
 
 - `pipeline/curated.txt` lists the chosen videos, their topics, and a title fragment that must match YouTube.
 - `pipeline/quotes.txt` lists the quotes that were read and approved.
+- `pipeline/books.txt` defines the ten books: ordered paths of long videos, each with a reason and a note per part.
+- `pipeline/cut.txt` lists videos removed for being too short, too introductory or off-thread, each with its reason. Delete a line to restore one.
+- `pipeline/pending.txt` holds candidates not yet verified against YouTube, which rate-limits lookups. Run `python3 -I pipeline/04_verify_videos.py --file pipeline/pending.txt --workers 1 --delay 6`, then move the passing lines into `curated.txt`.
 
 ## Tests
 

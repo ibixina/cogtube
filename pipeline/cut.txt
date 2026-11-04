@@ -1,0 +1,200 @@
+# Videos removed from the catalogue, with the reason. Delete a line to restore a video.
+# Rule behind it: books, not tweets. Under 25 minutes is cut unless a dense exception, intro-level
+# material is cut where you have already read past it, and pop or off-thread items are cut.
+# Format: video id | reason | title
+tDacjrSCeq4 | pop or off-thread: rant clip, no depth | Shouting in the Datacenter
+0fKBhvDjuy0 | pop or off-thread: short film | Powers of Ten™ (1977)
+xP5-iIeKXE8 | under 25 minutes | Life in life
+MFzDaBzBlL0 | under 25 minutes | The Backwards Brain Bicycle - Smarter Every Day 133
+qv6UVOQ0F44 | under 25 minutes | MarI/O - Machine Learning for Video Games
+spUNpyF58BY | intro-level: intro Fourier | But what is the Fourier Transform?  A visual introduction.
+36GT2zI8lVA | under 25 minutes | Richard Feynman. Why.
+uD4izuDMUQA | pop or off-thread: pop video | TIMELAPSE OF THE FUTURE: A Journey to the End of Time (4K)
+meiU6TxysCg | under 25 minutes | Two Monkeys Were Paid Unequally: Excerpt from Frans de Waal's TED Talk
+xOCurBYI_gY | under 25 minutes | Computer program that learns to play classic NES games
+jbkSRLYSojo | under 25 minutes | Hans Rosling's 200 Countries, 200 Years, 4 Minutes - The Joy of Stats 
+kpk2tdsPh0A | under 25 minutes | SM64 - Watch for Rolling Rocks - 0.5x A Presses (Commentated) [OUTDATE
+aircAruvnKk | intro-level: intro to neural nets | But what is a neural network? | Deep learning chapter 1
+vJG698U2Mvo | under 25 minutes | selective attention test
+42QuXLucH3Q | under 25 minutes | Is Most Published Research Wrong?
+wfYbgdo8e-8 | under 25 minutes | You Actually Share Your Brain With a Silent Stranger
+wh4aWZRtTwU | under 25 minutes | Brown; color is weird
+G-lN8vWm3m0 | under 25 minutes | Try this bizarre audio illusion! 👁️👂😮 - BBC
+EYPapE-3FRw | under 25 minutes | Feynman on Scientific Method.
+YX40hbAHx3s | intro-level: popular explainer | P vs. NP and the Computational Complexity Zoo
+WUvTyaaNkzM | intro-level: intro calculus | The essence of calculus
+LKnqECcg6Gw | under 25 minutes | Computer Color is Broken
+xuCn8ux2gbs | pop or off-thread: entertainment | history of the entire world, i guess
+UzxYlbK2c7E | intro-level: intro ML | Lecture 1 | Machine Learning (Stanford)
+sD0NjbwqlYw | intro-level: popular math | But what is the Riemann zeta function? Visualizing analytic continuati
+IUDTlvagjJA | under 25 minutes | Virtual Barber Shop (Audio...use headphones, close ur eyes)
+plVk4NVIUh8 | under 25 minutes | The Evolution of Bacteria on a “Mega-Plate” Petri Dish (Kishony Lab)
+Cj4y0EUlU-Y | under 25 minutes | Feynman: How to think 1 of 2  FUN TO IMAGINE 11
+umJsITGzXd0 | pop or off-thread: concept video | Apple Knowledge Navigator Video (1987)
+zcqZHYo7ONs | intro-level: popular physics | Bell's Theorem: The Quantum Venn Diagram Paradox
+sw0VfmXKq54 | under 25 minutes | How Prince of Persia Defeated Apple II's Memory Limitations | War Stor
+fNk_zzaMoSs | intro-level: intro linear algebra | Vectors | Chapter 1, Essence of linear algebra
+RLPVCJjTNgk | under 25 minutes | Lego Antikythera Mechanism
+muCPjK4nGY4 | under 25 minutes | Speaking Piano - Now with (somewhat decent) captions!
+p8u_k2LIZyo | under 25 minutes | Fast Inverse Square Root — A Quake III Algorithm
+HeQX2HjkcNo | intro-level: pop math | Math's Fundamental Flaw
+T647CGsuOVU | intro-level: intro | Imaginary Numbers Are Real [Part 1: Introduction]
+wjZofJX0v4M | intro-level: intro to transformers | Transformers, the tech behind LLMs | Deep Learning Chapter 5
+Mh5LY4Mz15o | pop or off-thread: entertainment | history of japan
+kEB11PQ9Eo8 | under 25 minutes | Non-Euclidean Worlds Engine
+KFNxJVTJleE | under 25 minutes | How Gamers Killed Ultima Online's Virtual Ecology | War Stories | Ars 
+kUfF2MTnqAw | under 25 minutes | Why You Should Put YOUR MASK On First (My Brain Without Oxygen) - Smar
+RKT-sKtR970 | under 25 minutes | Simulating an Entire Car Engine (yes, it makes noise)
+ZK3O402wf1c | intro-level: intro linear algebra | Lec 1 | MIT 18.06 Linear Algebra, Spring 2005
+tWr39Q9vBgo | under 25 minutes | Richard Feynman on Pseudoscience
+ZerUbHmuY04 | under 25 minutes | Causal understanding of water displacement by a crow
+JBgG_VSP7f8 | under 25 minutes | Karl Sims - Evolved Virtual Creatures, Evolution Simulation, 1994
+udPY5rQVoW0 | under 25 minutes | Playing a Neural Network's version of GTA V: GAN Theft Auto
+gB9n2gHsHN4 | intro-level: popular math | Fractals are typically not self-similar
+gxAaO2rsdIs | intro-level: popular explainer | Simulating an epidemic
+Iq9DzN6mvYA | intro-level: intro | Jake Vanderplas - Statistics for Hackers - PyCon 2016.mp4
+OmJ-4B-mS-Y | intro-level: pop overview | The Map of Mathematics
+nsjDnYxJ0bo | under 25 minutes | Movie reconstruction from human brain activity
+HQYsFshbkYw | under 25 minutes | Creating a Doom-style 3D engine in C
+mScpHTIi-kM | intro-level: pop game theory | Once you understand game theory, you understand the world.
+HZGCoVF3YvM | intro-level: intro Bayes | Bayes theorem, the geometry of changing beliefs
+8hAw1z8GdE8 | pop or off-thread: self-help | Personal Growth Series: Dr. William Dement on Healthy Sleep and Optima
+FKXOucXB4a8 | under 25 minutes | The Visual Microphone: Passive Recovery of Sound from Video
+XheAMrS8Q1c | under 25 minutes | Michael Levin: The electrical blueprints that orchestrate life | TED
+1Nh_vxpycEA | under 25 minutes | This Is Your Brain On Stale Air
+EtsXgODHMWk | under 25 minutes | Visualizing video at the speed of light — one trillion frames per seco
+MBnnXbOM5S4 | intro-level: intro | The more general uncertainty principle, regarding Fourier transforms
+zwAD6dRSVyI | intro-level: popular math | Thinking outside the 10-dimensional box
+vvr9AMWEU-c | under 25 minutes | Dial Up Modem Handshake Sound - Spectrogram
+XFDM1ip5HdU | intro-level: popular math | What does it feel like to invent math?
+lyu7v7nWzfo | under 25 minutes | Your Brain Hallucinates Your Conscious Reality | Anil Seth | TED
+3-son3EJTrU | under 25 minutes | RSA ANIMATE: Language as a Window into Human Nature
+ONZcjs1Pjmk | under 25 minutes | Eulerian Video Magnification
+hEUO6pjwFOo | intro-level: popular AI safety | Intelligence and Stupidity: The Orthogonality Thesis
+R9c-_neaxeU | under 25 minutes | MENACE: the pile of matchboxes which can learn
+v68zYyaEmEA | intro-level: intro information theory | Solving Wordle using information theory
+n02tImce3AE | under 25 minutes | Tested: Where Does The Tone Come From In An Electric Guitar?
+r6sGWTCMz2k | intro-level: intro Fourier | But what is a Fourier series?  From heat flow to drawing with circles 
+bEXefdbQDjw | pop or off-thread: pop spectacle | Growing Living Rat Neurons To Play... DOOM? | Part 1
+iDulhoQ2pro | intro-level: paper walkthrough of a paper you read | Attention Is All You Need
+gMqZR3pqMjg | under 25 minutes | The surprising pattern behind color names around the world
+E8kUJL04ELA | under 25 minutes | Does John Conway hate his Game of Life?
+NM-zWTU7X-k | under 25 minutes | Feynman: Knowing versus Understanding
+48sCx-wBs34 | intro-level: popular math | The Infinite Pattern That Never Repeats
+mvmuCPvRoWQ | intro-level: intro group theory | Euler's formula with introductory group theory
+d4EgbgTm0Bg | intro-level: popular math | Visualizing the 4d numbers Quaternions
+snAhsXyO3Ck | under 25 minutes | Your Brain Thinks Your Whole Home Is One Room
+X8jsijhllIA | intro-level: you read coding theory | But what are Hamming codes? The origin of error correction
+V2YDApNRK3g | under 25 minutes | Growing Human Neurons on a Home Made Electrode Array
+Kk2MH9O4pXY | under 25 minutes | Let’s BUILD a COMPUTER in CONWAY's GAME of LIFE ⠠⠵
+n-BZ5-Q48lE | under 25 minutes | New NES Tetris Technique: Faster Than Hypertapping!
+Yocja_N5s1I | pop or off-thread: survey for beginners | The Agricultural Revolution: Crash Course World History #1
+Lu56xVlZ40M | under 25 minutes | OpenAI Plays Hide and Seek…and Breaks The Game! 🤖
+Ilg3gGewQ5U | intro-level: intro | Backpropagation, intuitively | Deep Learning Chapter 3
+GNKFSpJIBO0 | pop or off-thread: popular talk | Math Encounters -- Five Balls, Two Hands: The Patterns of Juggling -- 
+cUTMhmVh1qs | pop or off-thread: event stream | DeepMind StarCraft II Demonstration
+04ERSb06dOg | intro-level: popular physics | Noether's Theorem and The Symmetries of Reality
+eMlx5fFNoYc | intro-level: intro to attention | Attention in transformers, step-by-step | Deep Learning Chapter 6
+oYp5XuGYqqY | under 25 minutes | Do we see reality as it is? | Donald Hoffman | TED
+AgkfIQ4IGaM | under 25 minutes | Deep Visualization Toolbox
+lFIYKmos3-s | under 25 minutes | Richard Feynman - Names Don't Constitute Knowledge
+o1dgrvlWML4 | under 25 minutes | Feynman :: Rules of Chess
+czgOWmtGVGs | pop or off-thread: pop video | A New History for Humanity – The Human Era
+lG4VkPoG3ko | intro-level: intro Bayes | The medical test paradox, and redesigning Bayes' rule
+eis11j_iGMs | intro-level: intro | Lambda Calculus - Computerphile
+aqqEYz38ens | under 25 minutes | High Res Wifi Signal Mapping
+X-iSQQgOd1A | under 25 minutes | Coding Adventure: Ant and Slime Simulations
+CaCcOwJPytQ | under 25 minutes | Special Topics - The Kalman Filter (1 of 55) What is a Kalman Filter?
+x7psGHgatGM | under 25 minutes | NIPS 2017 Test of Time Award "Machine learning has become alchemy.” | 
+92WHN-pAFCs | intro-level: intro | Proof That Computers Can't Do Everything (The Halting Problem)
+DcYLT37ImBY | pop or off-thread: novelty | Training AI to Play Pokemon with Reinforcement Learning
+igrN_wd_g74 | under 25 minutes | Build Your Own Drone Tracking Radar:  Part 1
+R3By_rdwxSg | under 25 minutes | 1981 1KB Computer vs. Modern PC: CHESS | Nostalgia Nerd
+HU6LfXNeQM4 | pop or off-thread: popular documentary | Your Brain: Perception Deception | Full Documentary | NOVA | PBS
+1CIpzeNxIhU | intro-level: intro diffusion | How AI Image Generators Work (Stable Diffusion / Dall-E) - Computerphi
+1tSqSMOyNFE | intro-level: popular explainer | How We’re Fooled By Statistics
+Dw3BZ6O_8LY | under 25 minutes | Training an unbeatable AI in Trackmania
+jsYwFizhncE | intro-level: popular math | Why do colliding blocks compute pi?
+UHTF1-IhuC0 | under 25 minutes | polyphonic overtone singing - explained visually by Anna-Maria Hefele
+5eqRuVp65eY | intro-level: popular explainer | AI can't cross this line and we don't know why.
+bxe2T-V8XRs | intro-level: intro | Neural Networks Demystified [Part 1: Data and Architecture]
+RZUDEaLa5Nw | under 25 minutes | The Game Boy, a hardware autopsy - Part 1: the CPU [PART 2 OUT NOW!]
+BrK7X_XlGB8 | intro-level: intro Bayes | A visual guide to Bayesian thinking
+Kv1Hiv3ox8I | under 25 minutes | How are Images Compressed?  [46MB ↘↘ 4.07MB] JPEG In Depth
+EmKQsSDlaa4 | intro-level: popular physics | How are holograms possible?
+PFDu9oVAE-g | intro-level: intro linear algebra | Eigenvectors and eigenvalues | Chapter 14, Essence of linear algebra
+VYQVlVoWoPY | intro-level: popular math | How to lie using visual proofs
+ZeecOKBus3Q | intro-level: popular AI safety | Why Would AI Want to do Bad Things? Instrumental Convergence
+QtJ77qsLrpw | under 25 minutes | Droste effect in Conway's Life
+NiTsduRreug | under 25 minutes | Stephen Krashen on Language Acquisition
+f5liqUk0ZTw | intro-level: intro tensors | What's a Tensor?
+Y9FZ4igNxNA | under 25 minutes | Fourier Optics used for Optical Pattern Recognition
+3liCbRZPrZA | under 25 minutes | SVM with polynomial kernel visualization
+awADEuv5vWY | under 25 minutes | How we can use light to see deep inside our bodies and brains | Mary L
+5Dnw46eC-0o | intro-level: intro | John Rauser keynote: "Statistics Without the Agonizing Pain" -- Strata
+ataGotQ7ir8 | under 25 minutes | Pac-Man Ghost AI Explained
+3s7h2MHQtxc | intro-level: popular math | Hilbert's Curve: Is infinite math useful?
+UwTQdOop-nU | intro-level: intro | Visual Group Theory, Lecture 1.1: What is a group?
+dW8Cy6WrO94 | pop or off-thread: obscure, off-thread | Pythagoras' theorem (a) | Math History | NJ Wildberger
+8idr1WZ1A7Q | intro-level: intro | Binomial distributions | Probabilities of probabilities, part 1
+KPoeNZZ6H4s | under 25 minutes | Giving Personality to Procedural Animations using Math
+r18Gi8lSkfM | under 25 minutes | Fourier Transform, Fourier Series, and frequency spectrum
+QZwneRb-zqA | under 25 minutes | Exploring How Computers Work
+1Hqm0dYKUx4 | under 25 minutes | Why It's Impossible to Tune a Piano
+Ul0Gilv5wvY | under 25 minutes | Phase-Functioned Neural Networks for Character Control
+NfnWJUyUJYU | intro-level: intro vision course | CS231n Winter 2016: Lecture1: Introduction and Historical Context
+ZH2wGpEZVgE | under 25 minutes | Design Club - Super Mario Bros: Level 1-1 - How Super Mario Mastered L
+FwFduRA_L6Q | under 25 minutes | Convolutional Network Demo from 1989
+mH0oCDa74tE | intro-level: intro | Group theory, abstraction, and the 196,883-dimensional monster
+IHZwWFHWa-w | intro-level: intro | Gradient descent, how neural networks learn | Deep Learning Chapter 2
+evZmpsl3jI0 | under 25 minutes | Derren Brown beats 9 chess players simultaneously.
+N3tRFayqVtk | pop or off-thread: novelty | I programmed some creatures. They Evolved.
+R13BD8qKeTg | intro-level: popular explainer | The Bayesian Trap
+Ip3X9LOh2dk | intro-level: intro linear algebra | The determinant | Chapter 6, Essence of linear algebra
+5OL1RqHrZQ8 | intro-level: intro statistics | Intro Statistics 9 Dance of the p Values
+FdnMWdICdRs | intro-level: you read the book | Statistical Rethinking 2023 - 01 - The Golem of Prague
+2SuvO4Gi7uY | under 25 minutes | Superpositions, Sudoku, the Wave Function Collapse algorithm.
+wcBEOcPtlYk | under 25 minutes | Tested: Where Does The Tone Come From In A Guitar Amplifier?
+EfGD2qveGdQ | under 25 minutes | Deepmind artificial intelligence @ FDOT14
+sTu3LwpF6XI | under 25 minutes | Making logic gates from transistors
+scS3f_YSYO0 | under 25 minutes | 5 game design tips from Sims creator Will Wright
+ZBnSU-LX1ss | pop or off-thread: interview, little depth | 1.16.14 Meet the "Mozart of Chess": World Chess Champ Magnus Carlsen, 
+bqtqltqcQhw | under 25 minutes | Coding Adventure: Boids
+BCiZc0n6COY | intro-level: intro information theory | Lecture 1: Introduction to Information Theory
+FaILnmUYS_U | under 25 minutes | I made an entire OS that only runs Tetris
+oWfFco7K9v8 | under 25 minutes | Ambiguous Cylinder Illusion
+y57wwucbXR8 | intro-level: short essay | Building the Software 2 0 Stack (Andrej Karpathy)
+z2exxj4COhU | pop or off-thread: thin | Google I/O 2013 - Cognitive Science and Design
+6OPsH8PK7xM | intro-level: popular explainer | What P vs NP is actually about
+bVQUSndDllU | intro-level: intro | A Brief Introduction to Neural Networks (unfinished series)
+BDqvzFY72mg | pop or off-thread: off-topic political science | Lecture 1: Introduction to Power and Politics in Today’s World
+cNxadbrN_aI | under 25 minutes | Perceptron Research from the 50's & 60's, clip
+PYylPRX6z4Q | intro-level: popular AI safety | Training AI Without Writing A Reward Function, with Reward Modelling
+HUti6vGctQM | intro-level: popular explainer | Correlation CAN Imply Causation! | Statistics Misconceptions
+wTJI_WuZSwE | intro-level: popular puzzle | The impossible chessboard puzzle
+fjbWr3ODbAo | under 25 minutes | The illusion of consciousness | Dan Dennett
+TGGGDpb04Yc | intro-level: intro | Statistical Thinking for Data Science | SciPy 2015 | Chris Fonnesbeck
+tIeHLnjs5U8 | intro-level: intro | Backpropagation calculus | Deep Learning Chapter 4
+uH0aihGWB8U | under 25 minutes | Daniel Kish: How I use sonar to navigate the world
+_9_AEVQ_p74 | under 25 minutes | Claude Shannon demonstrates "Theseus" Machine Learning @ Bell Labs (Hi
+cUqoHQDinCM | intro-level: popular explainer | The weirdest paradox in statistics (and machine learning)
+VT9i99D_9gI | under 25 minutes | Shocking illusion - Pretty celebrities turn ugly!
+BOvAbjfJ0x0 | under 25 minutes | The Iterated Prisoner's Dilemma and The Evolution of Cooperation
+Nwew5gHoh3E | under 25 minutes | Richard Dawkins demonstrates the evolution of the eye
+3JQ3hYko51Y | intro-level: toy visualization | Neural Network 3D Simulation
+wcRB3TWIAXE | under 25 minutes | Intro to Fourier Optics and the 4F correlator
+7-97RhAZhXI | under 25 minutes | Neat AI does Lenia - Conway's game of life arrives in the 21st century
+S27pHKBEp30 | intro-level: intro | LSTM is dead. Long Live Transformers!
+ZKE8qK9UCrU | under 25 minutes | Neuronal Signaling and Sodium-Potassium Pump (from PDB-101)
+vq2nnJ4g6N0 | intro-level: intro ML | Tensorflow and deep learning - without a PhD by Martin Görner
+FaC2RXBss2c | under 25 minutes | How to move one eye on its own (and the science of eye movement)
+SGZ6BttHMPw | intro-level: intro | Neural networks [1.1] : Feedforward neural network - artificial neuron
+KbB0FjPg0mw | intro-level: intro probability | Lecture 1: Probability and Counting | Statistics 110
+vT1JzLTH4G4 | intro-level: intro vision course | Lecture 1 | Introduction to Convolutional Neural Networks for Visual R
+DXvAlwMAxiA | under 25 minutes | How a transistor works
+ukLnPbIffxE | under 25 minutes | How to study for exams - Evidence-based revision tips
+G05M_Y6NQVM | under 25 minutes | Verlet cloth tearing test
+eC1BAcOzHyY | under 25 minutes | Magnus Carlsen's Mind-Blowing Memory! World Chess Champion tested
+tiKCORN-6m8 | under 25 minutes | Why guitarists USED TO play more in tune! (Microtonal Frets)
+wPiLLplofYw | under 25 minutes | Decerebrate Cat walks and exhibits multiple gait patterns
+bJLcIBixGj8 | intro-level: popular AI safety | The OTHER AI Alignment Problem: Mesa-Optimizers and Inner Alignment

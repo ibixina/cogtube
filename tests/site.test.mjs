@@ -56,7 +56,7 @@ const data = await page.evaluate(() => window.COGTUBE);
 const videos = data.videos;
 
 /* ---------- Data ---------- */
-check('catalogue is non-trivial', videos.length > 200, String(videos.length));
+check('catalogue is non-trivial', videos.length > 120, String(videos.length));
 check('every video has a working watch record', videos.every((v) => /^[\w-]{11}$/.test(v.id) && v.title && v.channel && v.duration > 0));
 check('every topic id is defined', videos.every((v) => v.topics.every((t) => data.topics.some((x) => x.id === t))));
 check('every video has evidence', videos.every((v) => v.threads.length > 0));
@@ -71,15 +71,57 @@ check('quotes are attributed', videos.every((v) => v.quotes.every((q) => q.text 
 
 /* ---------- Home ---------- */
 check('title on home', (await page.title()) === 'CogTube');
-check('start here plus one shelf per topic', (await page.locator('.shelf').count()) === data.topics.length + 1);
-check('every pick is in the catalogue and has a reason', data.picks.every((p) => p.why && videos.some((v) => v.id === p.id)));
-check('start here shows reasons', (await page.locator('.card-why').count()) === data.picks.length);
+// The home page gives books first claim on a video, then each topic shelf its leftovers.
+const claimed = new Set(data.books.flatMap((b) => b.videos.map((bv) => bv.id)));
+const byRank = [...videos].sort((a, b) => b.rank - a.rank);
+let expectedShelves = 1;
+for (const t of data.topics) {
+  const primary = byRank.filter((v) => v.topics[0] === t.id && !claimed.has(v.id));
+  const secondary = byRank.filter((v) => v.topics[0] !== t.id && v.topics.includes(t.id) && !claimed.has(v.id));
+  const items = [...primary, ...secondary].slice(0, 8);
+  items.forEach((v) => claimed.add(v.id));
+  if (items.length) expectedShelves += 1;
+}
+check('books shelf plus a shelf per topic that has videos left', (await page.locator('.shelf').count()) === expectedShelves, `${await page.locator('.shelf').count()} vs ${expectedShelves}`);
+check('there are ten books', data.books.length === 10, String(data.books.length));
+check('every book has a goal, a why and 3+ parts in the catalogue', data.books.every((b) => b.goal && b.why && b.videos.length >= 3
+  && b.videos.every((bv) => bv.note && videos.some((v) => v.id === bv.id))));
+check('no video appears twice in one book', data.books.every((b) => new Set(b.videos.map((v) => v.id)).size === b.videos.length));
+check('home shows every book', (await page.locator('.shelf .book').count()) === data.books.length);
 await page.screenshot({ path: join(SHOTS, 'home-dark.png') });
 const firstCardTitle = await page.locator('.shelf .card-title').first().innerText();
 check('first shelf shows real title', videos.some((v) => v.title.replace(/\s+/g, ' ').trim() === firstCardTitle.replace(/\s+/g, ' ').trim()), firstCardTitle);
 
 const homeIds = await page.locator('.shelf .card-title').evaluateAll((els) => els.map((e) => e.getAttribute('href')));
 check('no video repeats across home shelves', new Set(homeIds).size === homeIds.length, `${homeIds.length - new Set(homeIds).size} repeats`);
+
+/* ---------- Books ---------- */
+for (const [i, b] of data.books.entries()) {
+  await go(page, `#/book/${b.id}`);
+  check(`book ${b.id} lists its parts in order`, JSON.stringify(await page.locator('.parts .card-title').evaluateAll((els) => els.map((e) => e.getAttribute('href').split('?')[0].split('/').pop())))
+    === JSON.stringify(b.videos.map((v) => v.id)));
+  check(`book ${b.id} heading`, (await page.locator('h1').innerText()) === b.title);
+  check(`book ${b.id} parts keep the book context`, (await page.locator('.parts .card-title').first().getAttribute('href')).includes(`?book=${b.id}`));
+  check(`book ${b.id} shows a note per part`, (await page.locator('.parts .card-why').count()) === b.videos.length);
+}
+await go(page, '#/books');
+check('books page lists all ten', (await page.locator('.books.big .book').count()) === data.books.length);
+{
+  const b = data.books[0];
+  await go(page, `#/watch/${b.videos[1].id}?book=${b.id}`);
+  await page.waitForSelector('#yt-frame');
+  const strip = await page.locator('.book-strip').innerText();
+  check('watch strip names the part', strip.includes(`Part 2 of ${b.videos.length}`), strip);
+  await page.locator('.book-strip a.primary').click();
+  await page.waitForTimeout(250);
+  check('next part goes to the following video', (await page.evaluate(() => location.hash)).includes(b.videos[2].id));
+  await go(page, `#/watch/${b.videos.at(-1).id}?book=${b.id}`);
+  check('last part has no next button', (await page.locator('.book-strip a.primary').count()) === 0);
+  await go(page, `#/watch/${b.videos[0].id}?book=${b.id}`);
+  check('first part has no previous button', (await page.locator('.book-strip a:has-text("Previous")').count()) === 0);
+  await go(page, '#/book/nonsense');
+  check('unknown book is handled', (await page.locator('#main').innerText()).includes('does not exist'));
+}
 
 /* ---------- Every route renders cleanly ---------- */
 for (const t of data.topics) {
@@ -89,7 +131,7 @@ for (const t of data.topics) {
   check(`topic ${t.id} shows all videos`, shown === expected, `${shown} vs ${expected}`);
   check(`topic ${t.id} heading`, (await page.locator('h1').innerText()) === t.label);
 }
-for (const hash of ['#/all', '#/later', '#/history', '#/about', '#/nonsense', '#/topic/nope', '#/watch/doesnotexist']) {
+for (const hash of ['#/all', '#/books', '#/later', '#/history', '#/about', '#/nonsense', '#/topic/nope', '#/watch/doesnotexist']) {
   await go(page, hash);
   check(`route ${hash} has content`, (await page.locator('#main').innerText()).trim().length > 5);
 }
@@ -266,7 +308,7 @@ check('back restores scroll', Math.abs(after - before) < 5, `${before} vs ${afte
 /* ---------- Phone and tablet ---------- */
 for (const [label, viewport] of [['phone', { width: 390, height: 844 }], ['small-phone', { width: 320, height: 640 }], ['tablet', { width: 820, height: 1100 }]]) {
   const mobile = await open(viewport, 'light');
-  for (const hash of ['#/', '#/all', '#/topic/mind', `#/watch/${target.id}`, '#/about', '#/later', '#/history']) {
+  for (const hash of ['#/', '#/books', `#/book/${data.books[0].id}`, '#/all', '#/topic/mind', `#/watch/${target.id}`, '#/about', '#/later', '#/history']) {
     await go(mobile, hash);
     await mobile.waitForTimeout(150);
     const overflow = await mobile.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);

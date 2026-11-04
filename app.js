@@ -5,7 +5,14 @@
   const BY_ID = new Map(VIDEOS.map((v) => [v.id, v]));
   const TOPICS = DATA.topics;
   const TOPIC = new Map(TOPICS.map((t) => [t.id, t]));
-  const PICK_WHY = new Map(DATA.picks.map((p) => [p.id, p.why]));
+  const BOOKS = DATA.books;
+  const BOOK = new Map(BOOKS.map((b) => [b.id, b]));
+  // The first book a video belongs to supplies its note on the watch page.
+  const NOTE = new Map();
+  BOOKS.forEach((b) => b.videos.forEach((bv) => { if (!NOTE.has(bv.id)) NOTE.set(bv.id, bv.note); }));
+  const bookHref = (id) => `#/book/${encodeURIComponent(id)}`;
+  const watchHref = (id, book) => `#/watch/${encodeURIComponent(id)}${book ? `?book=${encodeURIComponent(book)}` : ''}`;
+  const bookRuntime = (b) => b.videos.reduce((sum, bv) => sum + (BY_ID.get(bv.id)?.duration || 0), 0);
   const FIRST_YEAR = DATA.stats.firstYear;
   const LAST_YEAR = DATA.stats.lastYear;
   const STORE_KEY = 'cogtube.v1';
@@ -18,6 +25,7 @@
     clock: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.2 3.1.8-1.2-4.5-2.7z',
     history: 'M13 3a9 9 0 0 0-9 9H1l4 4 4-4H6a7 7 0 1 1 2 4.9l-1.4 1.4A9 9 0 1 0 13 3zm-1 5v5l4.3 2.5.7-1.2-3.5-2.1V8z',
     info: 'M11 7h2v2h-2zm0 4h2v6h-2zm1-9a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z',
+    book: 'M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM6 4h5v8l-2.5-1.5L6 12V4z',
     grid: 'M4 4h7v7H4zm9 0h7v7h-7zM4 13h7v7H4zm9 0h7v7h-7z',
     sun: 'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM11 1h2v3h-2zm0 19h2v3h-2zM1 11h3v2H1zm19 0h3v2h-3zM4.2 2.8l2.1 2.1-1.4 1.4-2.1-2.1zm14.9 14.9 2.1 2.1-1.4 1.4-2.1-2.1zM2.8 19.8l2.1-2.1 1.4 1.4-2.1 2.1zM17.7 4.9l2.1-2.1 1.4 1.4-2.1 2.1z',
     moon: 'M12.3 2a10 10 0 1 0 9.7 12.6A8 8 0 0 1 12.3 2z',
@@ -131,7 +139,7 @@
     return parts.join(' · ');
   }
 
-  function thumbBlock(v) {
+  function thumbBlock(v, book = '') {
     const entry = state.history[v.id];
     let overlay = '';
     if (entry?.done) {
@@ -140,7 +148,7 @@
       const pct = Math.min(100, (entry.t / entry.d) * 100).toFixed(1);
       overlay = `<span class="prog-track"></span><span class="prog" style="width:${pct}%"></span>`;
     }
-    return `<a class="thumb" href="#/watch/${esc(v.id)}" tabindex="-1" aria-hidden="true">
+    return `<a class="thumb" href="${esc(watchHref(v.id, book))}" tabindex="-1" aria-hidden="true">
       <img loading="lazy" decoding="async" src="${thumb(v.id)}" alt="" width="480" height="270">
       <span class="dur">${fmtDur(v.duration)}</span>${overlay}</a>`;
   }
@@ -152,11 +160,11 @@
       title="Watch later">${icon('clock', 18)}</button>`;
   }
 
-  function card(v, compact = false, why = '') {
+  function card(v, compact = false, why = '', book = '') {
     return `<article class="card${compact ? ' compact' : ''}">
-      ${thumbBlock(v)}${saveButton(v)}
+      ${thumbBlock(v, book)}${saveButton(v)}
       <div class="card-body">
-        <a class="card-title" href="#/watch/${esc(v.id)}" title="${esc(v.title)}">${esc(v.title)}</a>
+        <a class="card-title" href="${esc(watchHref(v.id, book))}" title="${esc(v.title)}">${esc(v.title)}</a>
         ${why ? `<p class="card-why">${esc(why)}</p>` : ''}
         <div class="card-chan">${esc(v.channel)}</div>
         <div class="card-evid">${esc(evidenceLine(v))}</div>
@@ -250,7 +258,9 @@
       case undefined: return { name: 'home' };
       case 'all': return { name: 'all' };
       case 'topic': return { name: 'topic', id: segments[1] };
-      case 'watch': return { name: 'watch', id: segments[1], t: Number(params.get('t')) || 0 };
+      case 'watch': return { name: 'watch', id: segments[1], t: Number(params.get('t')) || 0, book: params.get('book') || '' };
+      case 'books': return { name: 'books' };
+      case 'book': return { name: 'book', id: segments[1] };
       case 'search': return { name: 'search', q: segments.slice(1).join('/') };
       case 'later': return { name: 'later' };
       case 'history': return { name: 'history' };
@@ -268,7 +278,8 @@
       ${icon(ic)}<span>${esc(label)}</span>${count ? `<span class="count">${count}</span>` : ''}</a>`;
     $('#sidebar').innerHTML = `
       ${item('#/', 'Home', 'home', r.name === 'home')}
-      ${item('#/all', 'All videos', 'grid', r.name === 'all', VIDEOS.length)}
+      ${item('#/books', 'The ten books', 'book', r.name === 'books' || r.name === 'book', BOOKS.length)}
+      ${item('#/all', 'The library', 'grid', r.name === 'all', VIDEOS.length)}
       ${item('#/later', 'Watch later', 'clock', r.name === 'later', state.later.length)}
       ${item('#/history', 'History', 'history', r.name === 'history', Object.keys(state.history).length)}
       <div class="nav-sep"></div>
@@ -301,7 +312,7 @@
     const resume = continueList();
     // A video can sit in several topics, but appears on one home shelf only:
     // its primary topic first, so each shelf stays distinct.
-    const shown = new Set(DATA.picks.map((p) => p.id));
+    const shown = new Set(BOOKS.flatMap((b) => b.videos.map((bv) => bv.id)));
     const byRank = [...VIDEOS].sort((a, b) => b.rank - a.rank);
     const shelves = TOPICS.map((t) => {
       const primary = byRank.filter((v) => v.topics[0] === t.id && !shown.has(v.id));
@@ -318,19 +329,68 @@
     const resumeShelf = resume.length ? `<section class="shelf" aria-labelledby="shelf-resume">
       <div class="shelf-head"><div><h2 id="shelf-resume">Continue watching</h2></div></div>
       ${row(resume.slice(0, 8))}</section>` : '';
-    const picks = `<section class="shelf" aria-labelledby="shelf-picks">
-      <div class="shelf-head"><div><h2 id="shelf-picks">Start here</h2>
-        <p>Picked by hand from what you're reading and working on right now.</p></div></div>
-      <div class="row">${DATA.picks.map((p) => card(BY_ID.get(p.id), false, p.why)).join('')}</div></section>`;
-    return `${chipsBar('home')}${fileBanner()}${resumeShelf}${picks}${shelves}`;
+    const books = `<section class="shelf" aria-labelledby="shelf-books">
+      <div class="shelf-head"><div><h2 id="shelf-books">The ten books</h2>
+        <p>Ten books away from being the most cracked person you know. Each is a path of long, dense talks and courses toward something you're building, read in order.</p></div>
+        <a class="shelf-more" href="#/books">Open the shelf</a></div>
+      <div class="books">${BOOKS.map((b, i) => bookCard(b, i)).join('')}</div></section>`;
+    return `${chipsBar('home')}${fileBanner()}${resumeShelf}${books}${shelves}`;
+  }
+
+  /* ---------- Books ---------- */
+  const doneCount = (b) => b.videos.filter((bv) => state.history[bv.id]?.done).length;
+  const nextPart = (b) => b.videos.find((bv) => !state.history[bv.id]?.done) || b.videos[0];
+
+  function bookCard(b, i) {
+    const done = doneCount(b);
+    const pct = Math.round((done / b.videos.length) * 100);
+    return `<a class="book" href="${esc(bookHref(b.id))}" aria-label="Book ${i + 1}: ${esc(b.title)}">
+      <span class="book-num">${String(i + 1).padStart(2, '0')}</span>
+      <span class="book-title">${esc(b.title)}</span>
+      <span class="book-goal">${esc(b.goal)}</span>
+      <span class="book-meta">${plural(b.videos.length, 'part')} · ${fmtLong(bookRuntime(b))}</span>
+      <span class="book-prog" role="img" aria-label="${done} of ${b.videos.length} watched"><i style="width:${pct}%"></i></span>
+    </a>`;
+  }
+
+  function pageBooks() {
+    setTitle('The ten books');
+    const hours = Math.round(BOOKS.reduce((sum, b) => sum + bookRuntime(b), 0) / 3600);
+    return `<div class="page-head"><h1>The ten books</h1>
+      <p>${esc(DATA.stats.booksIntro)} In total about ${hours} hours.</p></div>
+      <div class="books big">${BOOKS.map((b, i) => bookCard(b, i)).join('')}</div>`;
+  }
+
+  function pageBook(id) {
+    const b = BOOK.get(id);
+    if (!b) return pageMissing();
+    setTitle(b.title);
+    const i = BOOKS.indexOf(b);
+    const done = doneCount(b);
+    const next = nextPart(b);
+    const label = done === 0 ? 'Start reading' : done === b.videos.length ? 'Read again from the start' : 'Continue';
+    const rows = b.videos.map((bv, n) => {
+      const v = BY_ID.get(bv.id);
+      return `<li class="part"><span class="part-n">${n + 1}</span>${card(v, true, bv.note, b.id)}</li>`;
+    }).join('');
+    return `<div class="page-head"><p class="eyebrow">Book ${i + 1} of ${BOOKS.length}</p><h1>${esc(b.title)}</h1>
+      <p>${esc(b.goal)}</p>
+      <p class="book-meta" style="margin-top:10px">${plural(b.videos.length, 'part')} · ${fmtLong(bookRuntime(b))} · ${done} watched</p></div>
+      <div class="controls"><a class="btn primary" href="${esc(watchHref(done === b.videos.length ? b.videos[0].id : next.id, b.id))}">${label}</a></div>
+      <section class="panel book-why"><h2>Why this book</h2><p class="for-you">${esc(b.why)}</p></section>
+      <ol class="parts">${rows}</ol>
+      ${b.more.length ? `<section class="panel book-more"><h2>Go further</h2>
+        <p class="desc">The rest of each course, which didn't pass the recommendation bar one video at a time, so these haven't been checked.</p>
+        <ul class="more-list">${b.more.map((m) => `<li><a class="link" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">${esc(m.label)}</a> <span class="more-note">${esc(m.note)}</span></li>`).join('')}</ul></section>` : ''}
+      ${i < BOOKS.length - 1 ? `<p class="next-book"><a class="link" href="${esc(bookHref(BOOKS[i + 1].id))}">Next: ${esc(BOOKS[i + 1].title)} \u2192</a></p>` : ''}`;
   }
 
   function pageAll() {
-    setTitle('All videos');
+    setTitle('The library');
     const videos = applyView(VIDEOS);
     return `${chipsBar('all')}${fileBanner()}
-      <div class="page-head"><h1>All videos</h1>
-      <p>Everything that met the bar: recommended by different people, in different threads, across several years.</p></div>
+      <div class="page-head"><h1>The library</h1>
+      <p>Every video on the site, books included. All of it was recommended by different people, in different threads, across several years, and is long or dense enough to be worth your time.</p></div>
       ${controls(videos.length)}
       ${videos.length ? grid(videos) : emptyState('Nothing matches these filters', 'Try a different length, or show watched videos.')}`;
   }
@@ -395,7 +455,7 @@
           <li><strong>${s.hnItems.toLocaleString()}</strong> Hacker News stories and comments link to YouTube.</li>
           <li><strong>${s.distinctVideos.toLocaleString()}</strong> different videos are linked across all sources.</li>
           <li><strong>${s.qualified.toLocaleString()}</strong> of those clear the repetition bar.</li>
-          <li><strong>${VIDEOS.length.toLocaleString()}</strong> were then picked by hand for fit with your interests.</li>
+          <li><strong>${(VIDEOS.length + s.cutCount).toLocaleString()}</strong> were then picked by hand for your interests, and <strong>${s.cutCount.toLocaleString()}</strong> of those were cut as too short, too introductory or off-thread. <strong>${VIDEOS.length.toLocaleString()}</strong> remain.</li>
         </ul>
         <h2>Sources</h2>
         <table class="tbl"><thead><tr><th>Source</th><th class="n">Mentions</th><th class="n">Videos</th></tr></thead>
@@ -472,13 +532,24 @@
     </section>`;
   }
 
-  function pageWatch(id, startAt) {
+  function pageWatch(id, startAt, bookParam = '') {
     const v = BY_ID.get(id);
     if (!v) {
       setTitle('Not found');
       return emptyState('This video is not in the catalogue', '<a href="#/">Back to home</a>');
     }
     setTitle(v.title);
+    const book = (bookParam && BOOK.get(bookParam)?.videos.some((bv) => bv.id === id) ? BOOK.get(bookParam) : null)
+      || BOOKS.find((b) => b.videos.some((bv) => bv.id === id)) || null;
+    const part = book ? book.videos.findIndex((bv) => bv.id === id) : -1;
+    const prev = book && part > 0 ? book.videos[part - 1] : null;
+    const nextInBook = book && part < book.videos.length - 1 ? book.videos[part + 1] : null;
+    const strip = book ? `<nav class="book-strip" aria-label="Book progress">
+      <a class="book-strip-title" href="${esc(bookHref(book.id))}">Book ${BOOKS.indexOf(book) + 1} \u00b7 ${esc(book.title)}</a>
+      <span class="book-strip-pos">Part ${part + 1} of ${book.videos.length}</span>
+      ${prev ? `<a class="btn" href="${esc(watchHref(prev.id, book.id))}">\u2190 Previous</a>` : ''}
+      ${nextInBook ? `<a class="btn primary" href="${esc(watchHref(nextInBook.id, book.id))}">Next part \u2192</a>` : `<a class="btn" href="${esc(bookHref(book.id))}">Back to the book</a>`}
+    </nav>` : '';
     const related = relatedTo(v);
     const primary = TOPIC.get(v.topics[0]);
     const chapters = v.chapters?.length ? `<section class="panel" aria-labelledby="chap">
@@ -495,6 +566,7 @@
       </div>
       <div class="watch-main">
         <h1 class="watch-title">${esc(v.title)}</h1>
+        ${strip}
         <div class="watch-bar">
           <div class="watch-chan"><b>${esc(v.channel)}</b><span>${uploaded ? `Uploaded ${uploaded} · ` : ''}${fmtLong(v.duration)}</span></div>
           <div class="actions">
@@ -507,7 +579,7 @@
         </div>
         <section class="panel">
           <h2>Why you might like it</h2>
-          <p class="for-you">${esc(PICK_WHY.get(v.id) || (primary ? primary.why : ''))}</p>
+          <p class="for-you">${esc(NOTE.get(v.id) || (primary ? primary.why : ''))}</p>
           <div class="tags">${v.topics.map((t) => `<a class="tag" href="#/topic/${esc(t)}">${esc(TOPIC.get(t)?.label)}</a>`).join('')}</div>
         </section>
         ${evidencePanel(v)}
@@ -667,8 +739,14 @@
     if (r.name !== 'watch') return;
     const v = BY_ID.get(r.id);
     if (!v) return;
+    const book = BOOK.get(r.book) || BOOKS.find((b) => b.videos.some((bv) => bv.id === r.id));
+    const at = book ? book.videos.findIndex((bv) => bv.id === r.id) : -1;
+    if (book && at >= 0 && at < book.videos.length - 1) {
+      location.hash = watchHref(book.videos[at + 1].id, book.id);
+      return;
+    }
     const next = relatedTo(v)[0];
-    if (next) location.hash = `#/watch/${next.id}`;
+    if (next) location.hash = watchHref(next.id);
   }
 
   /* ---------- Render loop ---------- */
@@ -686,7 +764,9 @@
       home: pageHome,
       all: pageAll,
       topic: () => pageTopic(r.id),
-      watch: () => pageWatch(r.id, r.t),
+      watch: () => pageWatch(r.id, r.t, r.book),
+      books: pageBooks,
+      book: () => pageBook(r.id),
       search: () => pageSearch(r.q),
       later: pageLater,
       history: pageHistory,

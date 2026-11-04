@@ -60,7 +60,7 @@ RULES = [
     "Reddit posts count only with a score of 10 or more, and Lobsters posts with a score of 3 or more.",
     "YouTube confirms the video is watchable by link, isn't age-restricted, and has a title matching what was picked.",
     "It actually played through this site's embedded player in a real browser. Four otherwise qualifying videos failed this and were removed.",
-    "It was chosen by hand from that pool for fit with your interests, and checked for claims that have since fallen apart.",
+    "It was chosen by hand for depth: long or dense enough to be worth studying, from the people who did the work, and not already below your level.",
 ]
 CAVEATS = [
     "A mention isn't always praise. The quotes shown were read one by one, but the counts include every link, so a few may be neutral or critical.",
@@ -79,28 +79,61 @@ INTEREST_NOTE = (
     "than filled with less-recommended videos."
 )
 
-# Hand-picked first shelf. Each reason ties a video to something the person said or built.
-PICKS = [
-    ("FaC2RXBss2c", "On eye movements, right next to your saccadic suppression work."),
-    ("lWZ2Bz0tS-s", "A lecture course on Gödel, Escher, Bach, which you're reading now."),
-    ("BCiZc0n6COY", "An opening lecture on information theory, the math under your policy-complexity idea."),
-    ("dO4TPJkeaaU", "On compression and intelligence, close to your idea of an agent minimizing I(S;A)."),
-    ("-pb3z2w9gDg", "A course on The Society of Mind, for your interest in cognitive architecture."),
-    ("_njf8jwEGRo", "Chaos and reductionism in behavior, a companion to Mind as Motion."),
-    ("n8m7lFQ3njk", "Hofstadter on analogy, for when GEB sets off another tangent."),
-    ("NIu_dJGyIQI", "The free energy principle, which pairs well with Bayesian Rationality."),
-    ("pHsuIaPbNbY", "The sampler behind Stan, for your Bayesian estimation coursework."),
-    ("21qPOReu4FI", "Constructive math, following your recent intuitionistic proofs."),
-    ("2pWv7GOvuf0", "A foundation course in RL, for your work on policy complexity."),
-    ("HU6LfXNeQM4", "A broad look at perception to set beside your psychophysics experiments."),
-]
-
 SOURCE_LABELS = {
     "lobsters": "Lobsters",
     "kottke": "Kottke.org",
     "hellerve/programming-talks": "programming-talks (GitHub)",
     "JanVanRyswyck/awesome-talks": "awesome-talks (GitHub)",
 }
+
+
+BOOKS_INTRO = (
+    "Ten books away from being the most cracked person you know. Each book here is a path of long, dense talks and "
+    "courses, in the order to take them, aimed at something you're building or trying to understand."
+)
+
+
+def load_books(by_id):
+    """Parse pipeline/books.txt. A book is '@ id | title | goal', a '~ why' line, then 'video | note' lines."""
+    books = []
+    for number, raw in enumerate((ROOT / "pipeline" / "books.txt").read_text().splitlines(), 1):
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("@"):
+            parts = [p.strip() for p in line[1:].split("|")]
+            if len(parts) != 3 or not all(parts):
+                sys.exit(f"books.txt line {number}: book needs id | title | goal")
+            books.append({"id": parts[0], "title": parts[1], "goal": parts[2], "why": "", "videos": [], "more": []})
+        elif line.startswith("~"):
+            if not books:
+                sys.exit(f"books.txt line {number}: why before any book")
+            books[-1]["why"] = line[1:].strip()
+        elif line.startswith("+"):
+            if not books:
+                sys.exit(f"books.txt line {number}: link before any book")
+            label, _, rest = (p.strip() for p in line[1:].partition("|"))
+            url, _, note = (p.strip() for p in rest.partition("|"))
+            if not (label and url.startswith("https://www.youtube.com/playlist?list=") and note):
+                sys.exit(f"books.txt line {number}: link needs label | playlist url | note")
+            books[-1]["more"].append({"label": label, "url": url, "note": note})
+        else:
+            if not books:
+                sys.exit(f"books.txt line {number}: video before any book")
+            vid, _, note = (p.strip() for p in line.partition("|"))
+            if vid not in by_id:
+                sys.exit(f"books.txt line {number}: {vid} is not in the catalogue")
+            if not note:
+                sys.exit(f"books.txt line {number}: {vid} needs a note")
+            books[-1]["videos"].append({"id": vid, "note": note})
+    ids = [b["id"] for b in books]
+    assert len(ids) == len(set(ids)), "duplicate book ids"
+    for b in books:
+        assert b["why"], f"book {b['id']} has no why"
+        assert len(b["videos"]) >= 3, f"book {b['id']} is too short"
+        vids = [bv["id"] for bv in b["videos"]]
+        assert len(vids) == len(set(vids)), f"book {b['id']} repeats a video"
+    return books
 
 
 def year(epoch):
@@ -152,6 +185,8 @@ def main():
         if not set(topics) <= known:
             sys.exit(f"{vid} has an unknown topic: {topics}")
 
+    cut = {line.split("|")[0].strip() for line in (ROOT / "pipeline" / "cut.txt").read_text().splitlines()
+           if line.strip() and not line.startswith("#")}
     meta = json.loads((RAW / "video_meta.json").read_text())
     qualified = json.loads((RAW / "qualified.json").read_text())
     funnel = json.loads((RAW / "funnel.json").read_text())
@@ -239,6 +274,8 @@ def main():
     dropped_items = 0
     excluded = []
     for vid, topics in curated:
+        if vid in cut:
+            continue
         m = meta[vid]
         if m.get("error") or m.get("embeddable") is False or m.get("age_limit") or not m.get("duration"):
             excluded.append((vid, m.get("error") or "not playable"))
@@ -304,18 +341,15 @@ def main():
     videos.sort(key=lambda v: -v["rank"])
     all_years = [y for v in videos for y in (v["firstYear"], v["lastYear"])]
     now = datetime.now().astimezone()
-    in_catalogue = {v["id"] for v in videos}
-    missing_picks = [vid for vid, _ in PICKS if vid not in in_catalogue]
-    if missing_picks:
-        sys.exit(f"picks not in the catalogue: {missing_picks}")
+    books = load_books({v["id"]: v for v in videos})
     payload = {
-        "picks": [{"id": vid, "why": why} for vid, why in PICKS],
+        "books": books,
         "topics": [{"id": t[0], "label": t[1], "why": t[2]} for t in TOPICS],
         "stats": {
             "generatedDate": now.strftime("%B %-d, %Y"), "firstYear": min(all_years),
             "lastYear": max(max(all_years), now.year), "hnItems": hn_total,
             "distinctVideos": funnel["distinct_videos"], "qualified": funnel["qualified"],
-            "rules": RULES, "caveats": CAVEATS, "interestNote": INTEREST_NOTE,
+            "cutCount": len(cut), "rules": RULES, "caveats": CAVEATS, "interestNote": INTEREST_NOTE, "booksIntro": BOOKS_INTRO,
             "sources": source_stats,
         },
         "videos": videos,

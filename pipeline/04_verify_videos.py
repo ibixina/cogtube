@@ -11,6 +11,7 @@ failed lookup is retried on the next run.
 import json
 import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -19,20 +20,31 @@ RAW = ROOT / "data-raw"
 CACHE = RAW / "video_meta.json"
 
 
+def option(name, default):
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+
+
+SOURCE = ROOT / option("--file", "pipeline/curated.txt")
+# YouTube rate-limits bulk lookups, so a slower run can use one worker and a pause between requests.
+WORKERS = int(option("--workers", "4"))
+DELAY = float(option("--delay", "0"))
+
+
 def load_curated():
     entries = []
-    for number, line in enumerate((ROOT / "pipeline" / "curated.txt").read_text().splitlines(), 1):
+    for number, line in enumerate(SOURCE.read_text().splitlines(), 1):
         line = line.strip()
         if not line or line.startswith("#"):
             continue
         parts = [p.strip() for p in line.split("|")]
         if len(parts) != 3 or len(parts[0]) != 11:
-            sys.exit(f"curated.txt line {number} is malformed: {line}")
+            sys.exit(f"{SOURCE.name} line {number} is malformed: {line}")
         entries.append({"id": parts[0], "topics": parts[1].split(","), "expect": parts[2]})
     return entries
 
 
 def fetch(video_id):
+    time.sleep(DELAY)
     # The -- stops yt-dlp reading an ID that starts with a dash as an option.
     cmd = ["yt-dlp", "--skip-download", "-J", "--no-warnings", "--",
            f"https://www.youtube.com/watch?v={video_id}"]
@@ -85,7 +97,7 @@ def main():
     ids = [e["id"] for e in entries]
     duplicates = {i for i in ids if ids.count(i) > 1}
     if duplicates:
-        sys.exit(f"duplicate ids in curated.txt: {sorted(duplicates)}")
+        sys.exit(f"duplicate ids in the list: {sorted(duplicates)}")
 
     qualified = json.loads((RAW / "qualified.json").read_text())
     missing = [i for i in ids if i not in qualified]
@@ -95,7 +107,7 @@ def main():
     cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
     todo = [i for i in ids if i not in cache or cache[i].get("error")]
     print(f"{len(ids)} curated, fetching {len(todo)}", flush=True)
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         for count, (vid, meta) in enumerate(pool.map(fetch, todo), 1):
             cache[vid] = meta
             if count % 25 == 0:

@@ -390,3 +390,39 @@ table.tbl td.n, table.tbl th.n { text-align: right; font-variant-numeric: tabula
   * { transition: none !important; scroll-behavior: auto !important; }
   .card:hover .thumb img { transform: none; }
 }
+
+/* The ten books */
+.books { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.books.big { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.book {
+  display: flex; flex-direction: column; gap: 6px; padding: 16px 16px 14px; min-height: 196px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); position: relative; overflow: hidden;
+}
+.book:hover { background: var(--surface-2); border-color: var(--surface-3); }
+.book-num { font: 700 30px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--accent-text); letter-spacing: -1px; }
+.book-title { font-size: 17px; line-height: 1.25; font-weight: 700; letter-spacing: -.2px; margin-top: 2px; }
+.book-goal { color: var(--muted); font-size: 13px; line-height: 1.4; flex: 1; }
+.book-meta { color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+.book-prog { height: 3px; border-radius: 2px; background: var(--cell-off); overflow: hidden; margin-top: 4px; }
+.book-prog i { display: block; height: 100%; background: var(--accent); }
+.eyebrow { color: var(--accent-text); font-size: 13px; font-weight: 650; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { background: var(--accent-text); color: var(--on-accent); }
+.book-why { max-width: 760px; margin-bottom: 22px; }
+.parts { max-width: 880px; display: grid; gap: 4px; }
+.part { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 8px; align-items: start; }
+.part .card { margin-bottom: 12px; }
+.part-n { font: 600 15px/1 ui-monospace, monospace; color: var(--faint); padding-top: 4px; text-align: right; }
+.part .card-why { font-size: 13px; }
+.next-book { margin-top: 18px; }
+.book-strip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; padding: 10px 14px;
+  background: var(--surface); border-left: 3px solid var(--accent); border-radius: 8px;
+}
+.book-strip-title { font-weight: 650; }
+.book-strip-title:hover { text-decoration: underline; }
+.book-strip-pos { color: var(--muted); font-size: 13px; margin-right: auto; }
+@media (max-width: 640px) { .books, .books.big { grid-template-columns: minmax(0, 1fr); } .part { grid-template-columns: 24px minmax(0, 1fr); } }
+.book-more { max-width: 760px; margin-top: 18px; }
+.more-list { margin-top: 10px; display: grid; gap: 8px; }
+.more-note { color: var(--muted); font-size: 13px; display: block; }

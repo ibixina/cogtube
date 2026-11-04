@@ -1,0 +1,31 @@
+# Candidates waiting for YouTube verification (it rate-limited the lookup). Move a line to curated.txt once
+# `python3 -I pipeline/04_verify_videos.py` passes for it.
+-4Yp3j_jk8Q | ideas,research | Thinking Above the Code
+bmSAYlu0NcY | ideas | Philosophy of Software Design
+aAb7hSCtvGw | ideas | Good API
+fU9hR3kiOK0 | systems,ideas | inside out
+fhOHn9TClXY | ideas | Armstrong
+oyLBGkS5ICk | ideas | Spec-ulation
+YR5WdGrpoug | ideas | Maybe Not
+rI8tNMsozo0 | ideas | Simplicity Matters
+-6BsiVyC1kM | ideas | Value of Values
+Cym4TZwTCNU | ideas,systems | Deconstructing the Database
+NdSD07U5uBs | ideas | Power of Simplicity
+p2LZLYcu_JY | ideas,mind | Doing with Images
+agOdP2Bmieg | ideas | Humane Representation
+YyIQKBzIuBY | ideas | Programming and Scaling
+oIG9ztQw2Gc | systems | Moore
+B1J2RMorJXM | systems,history | Apollo Guidance
+_gZK0tW8EhQ | systems | Remote Agent
+z_dt7NG38V4 | ideas,history | Cedar
+ji5_MqicxSo | research | Last Lecture
+oTugjssqOT0 | research | Time Management
+pqzcCfUglws | research,mind | Misjudgement
+CZIINXhGDcs | history | Debt
+F_Riqjdh2oM | math | Quantum Computing for Computer Scientists
+4fFDFbi3toc | systems,games | Deterministic Simulation
+uU_Q2a0S0zI | research,math | n-Dimensional Space
+0m6hoOelZH8 | ideas | Lecture 7A
+2QgZVYI3tDs | ideas | Lecture 3A
+54l8_ewcOlY | mind | Awakening from the Meaning Crisis
+

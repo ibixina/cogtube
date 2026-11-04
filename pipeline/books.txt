@@ -1,0 +1,168 @@
+# The ten books. Each is a path of long, dense videos in the order to take them.
+# Format:
+#   @ id | Title | one-line goal
+#   ~ why this book, for this reader
+#   video id | note on this part
+#   + label | https://www.youtube.com/playlist?list=... | note   (the rest of a course; not individually vetted)
+# Every video must be in the catalogue (curated.txt and not in cut.txt), or the build stops.
+
+@ biology | Behavior is biology | Why people do what they do, from hormones and neurons up to culture, in Sapolsky's lectures.
+~ You have read the standard textbooks. Sapolsky's course is what ties their levels together, and it trains the habit your own models need most: never explaining a behavior at only one level. Seven lectures, from his opening one to the one he calls among the hardest of the course.
+NNnIGh9g6fA | The opening lecture of his Stanford course, laying out why behavior can't be explained at a single level.
+CAOnSbDSaOw | The limbic system as the emotional part of the nervous system, and how it shapes decisions.
+NOAgplgTxfc | His full lecture on depression as a biological disease.
+D9H9qTdserM | Stress physiology: a response built for short emergencies that does damage when it never switches off.
+4WwAQqWUkpI | The biological underpinnings of religiosity.
+GRYcSuyLiJk | A talk on the biology of humans at our best and worst.
+_njf8jwEGRo | Chaos and reductionism, which he calls one of the most difficult lectures of the course.
++ Stanford: Human Behavioral Biology, all 25 lectures | https://www.youtube.com/playlist?list=PL848F2368C90DDC3D | The full course that the first lecture opens.
+
+@ mind | What a mind is | Minsky, Hofstadter, Dennett, Searle, Chomsky, Bach and Seth on what minds are and how they could be built.
+~ You have read Damasio, Wegner and Nagel. This is the same ground as live argument, in an order that builds: how a mind could come from evolution and from parts, what analogy and thought are, whether a machine could have one, and what consciousness needs.
+IZefk4gzQt4 | Dennett on how minds came to exist at all.
+4Q_mY54hjM0 | Dennett's toolkit of thinking tools for arguing about hard questions.
+TTFoJQSd48c | Dennett on whether brains are computers, and what shapes the software they run.
+-pb3z2w9gDg | The opening lecture of Minsky's MIT course, built around The Emotion Machine.
+n8m7lFQ3njk | Hofstadter's case that analogy is the core of cognition.
+ePA1zq56J1I | Hofstadter on where deep insight in physics comes from, through Einstein.
+rHKwIYsPXLg | Searle on the philosophy of mind and whether AI could be conscious.
+D5in5EdjhD0 | Chomsky on the machine, the ghost, and the limits of understanding.
+3wfNl2L0Gf8 | Chomsky and Foucault debating human nature.
+lKQ0yaEJjok | Bach swaps "how does physics give rise to a mind" for "what information-processing system is a mind".
+WRdJCFEqFTU | Bach's computational account of the mind's architecture.
+xRel1JKOEbI | Seth on how biology gives rise to the experience of being you.
+tmx2tpcdKZY | Conway on free will and determinism, the setup for the Free Will Theorem.
++ Awakening from the Meaning Crisis, 51 episodes | https://www.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ | Vervaeke's lecture series linking cognitive science, philosophy and contemplative traditions.
+
+@ neuro | Brains as machines, and minds beyond them | Hawkins, Hinton and Levin on how a brain could compute, and where computation in living things really lives.
+~ For your brain atlas and neuron models. Hawkins, Hinton and Sandberg ask how a cortex computes and how you would copy one. Levin's talks show that cells and tissues compute too, which changes what there is to model.
+4y43qwS8fl4 | Hawkins on why the neocortex works on principles unlike a traditional computer.
+izO2_mCvFaw | Hawkins on what the brain implies for machine intelligence.
+-EVqrDlAqYo | A long conversation on his Thousand Brains theory.
+DleXA5ADG78 | Hinton uses machine learning to shed light on two puzzles: spike timing, and sex.
+NIu_dJGyIQI | Friston on the free energy principle, short.
+kRB6Qzx9oXs | Sandberg on what emulating a whole brain would take.
+RjD1aLm4Thg | Levin on cells computing with bioelectricity outside the nervous system.
+Z-9rLlFgcm0 | Levin on bioelectric pattern memories and how cell collectives decide anatomy.
+L43-XE1uwWc | Levin's keynote for the artificial-life community.
+YnObwxJZpZc | A discussion of his paper The Computational Boundary of a Self: scale-free cognition and cognitive light cones.
+p3lsYlod5OU | The three-hour conversation: life, embryogenesis, xenobots.
+
+@ learn | How machines learn | The people who built the field on learning, reinforcement, compression and where it breaks.
+~ For your RL work. Silver gives the framing that the rest builds on. Rae argues that good prediction is compression, close to the trade-off your policy-complexity idea measures. Stanley, Vapnik and Yang come at the limits from three directions: search, theory and mathematics.
+VdIURAu1-aU | Hinton's 2010 talk on learning deep networks one layer at a time from unlabeled data.
+2pWv7GOvuf0 | The opening lecture of Silver's reinforcement learning course.
+ld28AU7DDB4 | Silver on classic games as a case study in reinforcement learning.
+WXuK6gekU1Y | The AlphaGo documentary, for the human side of the result.
+3FIo6evmweo | Schmidhuber on Gödel machines, meta-learning and LSTMs.
+13CZPWmke6A | Sutskever on deep learning, in conversation.
+9EN_HoEk3KY | Sutskever on meta-learning and self-play, from MIT's AGI course.
+STFcvzoxVw4 | Vapnik, co-inventor of the support vector machine, on statistical learning.
+-yX1SYeDHbg | Graves on generating sequences with recurrent networks, a guest lecture in Oxford's deep learning course.
+dO4TPJkeaaU | Rae on prediction as compression, and why foundation models vindicate it.
+lhYGXYeMq_E | Stanley on why objectives mislead and open-ended search works.
+w6Pw4MOzMuo | Bronstein's keynote on geometric deep learning, the symmetry view of architectures.
+1aXOXHA7Jcw | Yang on large-N limits of random matrices and neural networks, the most mathematical talk here.
+qbIk7-JPB2c | Bubeck on early GPT-4 experiments. A claim-heavy talk, so watch it critically.
++ DeepMind x UCL: Introduction to Reinforcement Learning, 10 lectures | https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ | Silver's full course.
+
+@ scratch | Build it from scratch | Karpathy builds backpropagation, a language model and GPT live, line by line.
+~ You have read the theory, so this is the implementation. Typing these through is the cheapest way to make the math yours, and it is the shortest path from your reading to code you can modify.
+VMj-3S1tku0 | Building micrograd, a backpropagation engine, from nothing.
+PaCmpygFfXo | Building makemore, a character-level language model.
+q8SA3rM6ckI | Doing backpropagation by hand through a whole network.
+kCc8FmEb1nY | Building GPT from scratch, in code.
+bZQun8Y4L2A | State of GPT, how the models are trained and used.
+zjkBMFhNj_g | An hour-long introduction to large language models.
++ Neural Networks: Zero to Hero, 10 videos | https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ | Karpathy's full series.
+
+@ proof | Computation and proof | From SICP through types and constructive math to the limits of what can be computed.
+~ You have been working through intuitionistic proofs, and Wadler, Bauer and Harper are where that road goes. Sussman and SICP supply the programming half, and Sipser and Aaronson the limits.
+2Op3QLzMgSY | The first lecture of MIT's 1986 Structure and Interpretation of Computer Programs course.
+HB5TrK7A4pI | Sussman on how, after 60 years, we have only begun to understand composition and abstraction.
+IOiZatlZtGU | Wadler on propositions as types, the link between proofs and programs.
+VxINoKFm-S4 | Dependent types, where one language runs at compile time and at run time.
+LE0SSLizYUI | The first of five lectures on computational type theory at the Oregon summer school.
+I8LbkfSSR58 | Milewski on the motivation and philosophy of category theory.
+21qPOReu4FI | Bauer on constructive mathematics, set apart from the usual philosophical argument.
+tYjmiT422yQ | A personal view of Gödel's incompleteness, through concrete independent sentences.
+msp2y_Y5MLE | Sipser's public lecture on P versus NP.
+0jrybODBUpA | Aaronson on computational complexity and quantum computers.
++ MIT 6.001 Structure and Interpretation, 40 lectures | https://www.youtube.com/playlist?list=PLE18841CABEA24090 | The full 1986 course.
+
+@ metal | Down to the metal | From how chips are made to how an operating system should treat the hardware under it.
+~ You have the Xinu and OS class work and the Silberschatz book. This goes under and beside that: the physical machine, how CPUs and caches shape fast code, and the people who built Unix explaining their choices. Ben Eater's build gives the part books can't.
+NGFhc8R_uO4 | How modern computer chips are manufactured, from a 2009 talk.
+LnzuMJLZRdU | Part one of building a 6502 computer from scratch.
+yl8vPW5hydQ | How a CPU reads machine code, on the 6502.
+dXdoim96v5A | The control logic of his 8-bit breadboard CPU.
+g_koa00MBLg | How hardware timers work.
+l7rce6IQDWs | Building a video card from logic chips.
+wdgULBpRoXk | How a USB keyboard works, from the signal up.
+3LVeEjsn8Ts | The 2017 Turing Award lecture by Hennessy and Patterson.
+Nb2tebYAaOA | Keller on microprocessors, Moore's law and thinking from first principles.
+WDIkqP4JbkE | Meyers on how CPU caches change what fast code looks like.
+OFgxAFdxYAQ | Click walks through a performance example on an out-of-order CPU.
+MC1EKLQ2Wmg | Thompson on myths about modern hardware, and mechanical sympathy.
+rX0ItVEVjHc | Acton's case for data-oriented design: the purpose of a program is to transform data.
+kZRE7HIO3vk | Muratori's historical argument for a stable instruction set across whole systems on a chip.
+36myc8wQhLo | Roscoe on why operating systems must rediscover the hardware they run on.
+EY6q5dv_B-o | Ken Thompson, co-inventor of Unix, interviewed by Brian Kernighan.
+_2NI6t2r_Hs | The history of Unix as seen by Rob Pike.
+lJ8ydIuPFeU | Tene on the common pitfalls in measuring latency.
++ Build a 65c02-based computer from scratch, 29 videos | https://www.youtube.com/playlist?list=PLowKtXNTBypFbtuVMUVXNR0z1mu7dp7eH | Ben Eater's full build.
++ Building an 8-bit breadboard computer, 44 videos | https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU | His other full build.
+
+@ design | Design that lasts | Engelbart, Kay, Victor, Hickey and Armstrong on what makes systems simple, live and long-lived.
+~ You build tools constantly, and these are the talks other builders keep passing around. The arc: what computers were supposed to be, then how to keep a design simple, then how to keep it running.
+yJDv-zdhzMY | Engelbart's 1968 demonstration of technologies that are now commonplace.
+uknEhXyZgsg | Dan Ingalls demonstrating the Smalltalk environment on the Alto.
+oKg1hTOQXoY | Kay's seminal 1997 OOPSLA keynote.
+FvmTSpJU-Xc | A talk Kay gave at UIUC in fall 2009.
+N9c7_8Gp7gI | Kay on alternative approaches to teaching computer science.
+AnrlSqtpOkw | Kay on Ted Nelson, at the Intertwingled festival.
+PUv66718DII | Victor's talk on working from a principle, with demos of tools that show results as you type.
+8pTEmbeENF4 | Victor's 2013 talk, staged as if given in 1973.
+SxdOUGdseq4 | Hickey on the difference between simple and easy, and why complexity is the thing to manage.
+f84n5oFoZBc | Hickey's "philosophical" talk from the first Clojure/conj, on thinking hard about a problem before building.
+ROor6_NGIWU | Hickey on the language of whole systems beyond any one program; the chapters cover names, stacks and objects.
+2V1FtfBDsLU | Hickey's retrospective on ten years of Clojure.
+lKXe3HUG2l4 | Armstrong, an inventor of Erlang, on The Mess We're In.
+JvBT4XBdoUE | Juric on what makes Erlang and Elixir good for large-scale systems.
+_ahvzDzKdB0 | Steele on designing a language that its users can grow.
+8Ab3ArE8W3s | Rusher on why programs should be live, not dead.
+ZSRHeXYDLko | Blow on how software gets made, and what he argues that means for civilization.
+
+@ think | How to think and do research | Choosing problems, explaining ideas, writing, and judging your own judgment.
+~ These are the working skills of research. Hamming on choosing important problems, Feynman on explaining and understanding, McEnerney and Winston and Pinker on writing and speaking, and Kahneman on the limits of your own judgment.
+AD4b-52jtos | Hamming's opening lecture, aimed at preparing you for your technical future.
+a1zDuOPkMSw | Hamming's You and Your Research.
+EKWGGDXe5MA | Feynman's computer science lecture on hardware, software and heuristics.
+P1ww1IXRfTA | All six Fun to Imagine episodes with Feynman, 66 minutes.
+vtIzMaLkCaM | McEnerney on the craft of writing effectively.
+aFwVf5a3pZM | McEnerney on writing beyond the academy.
+Unzc731iCUY | Winston's MIT course on how to speak.
+OV5J6BfToSw | Pinker on style, drawing on linguistics and cognitive science.
+CjVQJdIrDJ0 | Kahneman on the research behind Thinking, Fast and Slow.
+uEFrE6cgVNY | Stefik on evaluating programming languages with evidence, not just proofs and benchmarks.
+g1ib43q3uXQ | Hermans on how to teach programming and other things.
+
+@ worlds | Worlds that run | Games and simulation: how the people who ship them make them feel alive and stay fast.
+~ You build games constantly. These are the talks by the makers, on feel, design, engineering, rendering and the history underneath, plus chess engines, for Tactics Lab.
+wt-iVFxgFWk | Carmack's QuakeCon 2012 keynote.
+JjDsP5n2kSM | Blow on how to program independent games.
+MtzCLd93SyU | Meier's GDC talk on the psychology of game design.
+IJcuQQ1eWWI | Johnson on building the AI of strategy games like Civilization.
+VdqhHKjepiE | Sylvester on defining RimWorld as a story generator.
+AJdEqssNZ-U | Nijman on the art of screenshake.
+Fy0aCDmgnxg | Juice it or lose it, on making interactions feel alive.
+W3aieHjyNvw | How Overwatch uses an entity component system, and its netcode.
+aMcJ1Jvtef0 | Ferrari on drawing 8-bit graphics, including his color-cycling techniques.
+VscdPA6sUkc | Brevik's classic postmortem of Diablo.
+sJFnWZH5FXc | How the Atari 2600 draws a picture with almost no video memory.
+BFld4EBO2RE | Quilez paints a landscape out of mathematics.
+aVwxzDHniEw | Holmér on the math of Bézier curves.
+_fQtxKmgJC8 | The history of Tetris, from Pajitnov to the licensing fight.
+DpXy041BIlA | A tournament of 30 odd chess algorithms.
+U4ogK0MIzqk | Lague builds a chess engine.
+LZgyVadkgmI | Lichess's founder on how the site works.
