@@ -26,32 +26,19 @@ ITEM_CACHE = RAW / "firebase_items.json"
 MAX_COMMENT_THREADS = 14
 
 TOPICS = [
-    ("mind", "Mind & Perception",
-     "Close to your saccade-suppression and O/Q search experiments, your reading on blindsight and binocular suppression, and books like Marr's Vision and Gödel, Escher, Bach."),
-    ("brain", "Brain & Behavior",
-     "For your brain atlas, your biological neuron models, your Dayan & Abbott reading, and the paper on how synapses self-assemble gradient learning."),
-    ("stats", "Bayes, Stats & Models",
-     "Stan, BayesFlow, simulation-based inference and information theory run through your coursework and projects, along with adaptive experiments, limits on phenotyping, and Bayesian Rationality on your shelf."),
-    ("ml", "Neural Networks",
-     "You read V-JEPA and transformer papers, ask about flow and diffusion models, and run your own activation-function experiments."),
-    ("rl", "Learning Agents",
-     "For DreamerV3, the reversal-task agents in your sbi-rnn project, and your own idea for an RL agent that minimizes policy complexity."),
-    ("math", "Math, Visually",
-     "For your Escher and Droste paper, your intuitionistic proofs and information theory notes, and your Grothendieck reading."),
-    ("systems", "Systems & OS",
-     "For your Xinu and OS class work, and the Linux digging you do on your own machines."),
-    ("ideas", "Big Computing Ideas",
-     "The talks programmers keep sending each other. Useful for someone who builds as many tools as you do."),
-    ("research", "Doing Research",
-     "How to choose problems, write, and speak, which are the working skills of your research."),
-    ("games", "Game Dev & Simulation",
-     "For the games you build, from the Over the Hill clone to Galactic Racer and your stick-figure shooter."),
-    ("chess", "Chess & Tetris",
-     "For Tactics Lab, your opening trainer, your chess-personality analysis, and the Meta-T Tetris experiment."),
-    ("signals", "Signals, Sound & Music",
-     "For your position-encoding work and Blind Positioning Lab, your guitar trainer and your keyboard piano."),
-    ("history", "History",
-     "For your world-history map, which asks what was happening everywhere at once."),
+    ("mind", "Mind & Perception", "Perception, attention, consciousness and the philosophy of mind."),
+    ("brain", "Brain & Behavior", "Neuroscience and the biology of behavior."),
+    ("stats", "Bayes, Stats & Models", "Bayesian inference, probability and statistical modeling."),
+    ("ml", "Neural Networks", "Neural networks, deep learning and language models."),
+    ("rl", "Learning Agents", "Reinforcement learning and agents that learn by acting."),
+    ("math", "Math, Visually", "Mathematics taught visually and from first principles."),
+    ("systems", "Systems & OS", "Operating systems, hardware, performance and low-level engineering."),
+    ("ideas", "Big Computing Ideas", "Big ideas in computing, from the people who shaped them."),
+    ("research", "Doing Research", "How to choose problems, think clearly, write and speak."),
+    ("games", "Game Dev & Simulation", "Game design, engines and simulation."),
+    ("chess", "Chess & Tetris", "Chess, chess engines and Tetris."),
+    ("signals", "Signals, Sound & Music", "Signals, sound and music, and how they are processed."),
+    ("history", "History", "Ancient civilizations and the history of ideas and machines."),
 ]
 
 RULES = [
@@ -60,7 +47,7 @@ RULES = [
     "Reddit posts count only with a score of 10 or more, and Lobsters posts with a score of 3 or more.",
     "YouTube confirms the video is watchable by link, isn't age-restricted, and has a title matching what was picked.",
     "It actually played through this site's embedded player in a real browser. Four otherwise qualifying videos failed this and were removed.",
-    "It was chosen by hand for depth: long or dense enough to be worth studying, from the people who did the work, and not already below your level.",
+    "It was chosen by hand for depth: long or dense enough to be worth studying, from the people who did the work, and not introductory.",
 ]
 CAVEATS = [
     "A mention isn't always praise. The quotes shown were read one by one, but the counts include every link, so a few may be neutral or critical.",
@@ -70,15 +57,6 @@ CAVEATS = [
     "Numbers are a snapshot from the date above. Videos can still be removed from YouTube later, and the player shows a link if that happens.",
     "Reddit data comes from the Arctic Shift archive and covers r/lectures, r/cogsci, r/neuroscience, r/compmathneuro, r/reinforcementlearning and r/statistics. Larger subreddits such as r/MachineLearning were left out because a full listing takes hours. Kottke links are limited to posts carrying its video tag. MetaFilter was left out because it blocks automated access.",
 ]
-INTEREST_NOTE = (
-    "Your interests come from the memories, project list and conversation titles in your Claude export, plus your claude.ai "
-    "artifact titles, the project folders on this machine, a few papers in them, and the opening messages of past Claude "
-    "Code sessions. The bodies of your conversations weren't read through, and nothing from them is copied here. The topic "
-    "notes are still an inference, so treat them as guesses. Some things you read about have no video that clears the bar: "
-    "Marr, Dayan & Abbott, Nagel, Henrich, blindsight, face patches and flow matching. Those gaps were left empty rather "
-    "than filled with less-recommended videos."
-)
-
 SOURCE_LABELS = {
     "lobsters": "Lobsters",
     "kottke": "Kottke.org",
@@ -88,8 +66,7 @@ SOURCE_LABELS = {
 
 
 BOOKS_INTRO = (
-    "Ten books away from being the most cracked person you know. Each book here is a path of long, dense talks and "
-    "courses, in the order to take them, aimed at something you're building or trying to understand."
+    "Ten reading paths through the catalogue. Each is a sequence of long talks and courses on one subject, in the order to watch them."
 )
 
 
@@ -349,7 +326,7 @@ def main():
             "generatedDate": now.strftime("%B %-d, %Y"), "firstYear": min(all_years),
             "lastYear": max(max(all_years), now.year), "hnItems": hn_total,
             "distinctVideos": funnel["distinct_videos"], "qualified": funnel["qualified"],
-            "cutCount": len(cut), "rules": RULES, "caveats": CAVEATS, "interestNote": INTEREST_NOTE, "booksIntro": BOOKS_INTRO,
+            "cutCount": len(cut), "rules": RULES, "caveats": CAVEATS, "booksIntro": BOOKS_INTRO,
             "sources": source_stats,
         },
         "videos": videos,

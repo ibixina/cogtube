@@ -331,7 +331,7 @@
       ${row(resume.slice(0, 8))}</section>` : '';
     const books = `<section class="shelf" aria-labelledby="shelf-books">
       <div class="shelf-head"><div><h2 id="shelf-books">The ten books</h2>
-        <p>Ten books away from being the most cracked person you know. Each is a path of long, dense talks and courses toward something you're building, read in order.</p></div>
+        <p>${esc(DATA.stats.booksIntro)}</p></div>
         <a class="shelf-more" href="#/books">Open the shelf</a></div>
       <div class="books">${BOOKS.map((b, i) => bookCard(b, i)).join('')}</div></section>`;
     return `${chipsBar('home')}${fileBanner()}${resumeShelf}${books}${shelves}`;
@@ -390,7 +390,7 @@
     const videos = applyView(VIDEOS);
     return `${chipsBar('all')}${fileBanner()}
       <div class="page-head"><h1>The library</h1>
-      <p>Every video on the site, books included. All of it was recommended by different people, in different threads, across several years, and is long or dense enough to be worth your time.</p></div>
+      <p>Every video on the site, books included. All of it was recommended by different people, in different threads, across several years, and is long or dense enough to be worth the time.</p></div>
       ${controls(videos.length)}
       ${videos.length ? grid(videos) : emptyState('Nothing matches these filters', 'Try a different length, or show watched videos.')}`;
   }
@@ -455,15 +455,13 @@
           <li><strong>${s.hnItems.toLocaleString()}</strong> Hacker News stories and comments link to YouTube.</li>
           <li><strong>${s.distinctVideos.toLocaleString()}</strong> different videos are linked across all sources.</li>
           <li><strong>${s.qualified.toLocaleString()}</strong> of those clear the repetition bar.</li>
-          <li><strong>${(VIDEOS.length + s.cutCount).toLocaleString()}</strong> were then picked by hand for your interests, and <strong>${s.cutCount.toLocaleString()}</strong> of those were cut as too short, too introductory or off-thread. <strong>${VIDEOS.length.toLocaleString()}</strong> remain.</li>
+          <li><strong>${(VIDEOS.length + s.cutCount).toLocaleString()}</strong> were then picked by hand for depth, and <strong>${s.cutCount.toLocaleString()}</strong> of those were cut as too short, too introductory or off-thread. <strong>${VIDEOS.length.toLocaleString()}</strong> remain.</li>
         </ul>
         <h2>Sources</h2>
         <table class="tbl"><thead><tr><th>Source</th><th class="n">Mentions</th><th class="n">Videos</th></tr></thead>
         <tbody>${rows}</tbody></table>
         <h2>What the numbers mean</h2>
         <ul>${s.caveats.map((c) => `<li>${esc(c)}</li>`).join('')}</ul>
-        <h2>How your interests were read</h2>
-        <p>${esc(s.interestNote)}</p>
         <h2>Keyboard</h2>
         <div class="keys">
           <kbd>/</kbd><span>Search</span>
@@ -578,7 +576,7 @@
           </div>
         </div>
         <section class="panel">
-          <h2>Why you might like it</h2>
+          <h2>About this video</h2>
           <p class="for-you">${esc(NOTE.get(v.id) || (primary ? primary.why : ''))}</p>
           <div class="tags">${v.topics.map((t) => `<a class="tag" href="#/topic/${esc(t)}">${esc(TOPIC.get(t)?.label)}</a>`).join('')}</div>
         </section>

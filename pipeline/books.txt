@@ -7,7 +7,7 @@
 # Every video must be in the catalogue (curated.txt and not in cut.txt), or the build stops.
 
 @ biology | Behavior is biology | Why people do what they do, from hormones and neurons up to culture, in Sapolsky's lectures.
-~ You have read the standard textbooks. Sapolsky's course is what ties their levels together, and it trains the habit your own models need most: never explaining a behavior at only one level. Seven lectures, from his opening one to the one he calls among the hardest of the course.
+~ Sapolsky's course ties together the levels of explanation for behavior, from genes and hormones to culture, and keeps returning to why a single-level explanation fails. Seven lectures, from his opening one to the one he calls among the hardest of the course.
 NNnIGh9g6fA | The opening lecture of his Stanford course, laying out why behavior can't be explained at a single level.
 CAOnSbDSaOw | The limbic system as the emotional part of the nervous system, and how it shapes decisions.
 NOAgplgTxfc | His full lecture on depression as a biological disease.
@@ -18,7 +18,7 @@ _njf8jwEGRo | Chaos and reductionism, which he calls one of the most difficult l
 + Stanford: Human Behavioral Biology, all 25 lectures | https://www.youtube.com/playlist?list=PL848F2368C90DDC3D | The full course that the first lecture opens.
 
 @ mind | What a mind is | Minsky, Hofstadter, Dennett, Searle, Chomsky, Bach and Seth on what minds are and how they could be built.
-~ You have read Damasio, Wegner and Nagel. This is the same ground as live argument, in an order that builds: how a mind could come from evolution and from parts, what analogy and thought are, whether a machine could have one, and what consciousness needs.
+~ The classic arguments about minds, made by the people who shaped them. The order builds: how a mind could arise from evolution and from parts, what analogy and thought are, whether a machine could have one, and what consciousness needs.
 IZefk4gzQt4 | Dennett on how minds came to exist at all.
 4Q_mY54hjM0 | Dennett's toolkit of thinking tools for arguing about hard questions.
 TTFoJQSd48c | Dennett on whether brains are computers, and what shapes the software they run.
@@ -35,7 +35,7 @@ tmx2tpcdKZY | Conway on free will and determinism, the setup for the Free Will T
 + Awakening from the Meaning Crisis, 51 episodes | https://www.youtube.com/playlist?list=PLND1JCRq8Vuh3f0P5qjrSdb5eC1ZfZwWJ | Vervaeke's lecture series linking cognitive science, philosophy and contemplative traditions.
 
 @ neuro | Brains as machines, and minds beyond them | Hawkins, Hinton and Levin on how a brain could compute, and where computation in living things really lives.
-~ For your brain atlas and neuron models. Hawkins, Hinton and Sandberg ask how a cortex computes and how you would copy one. Levin's talks show that cells and tissues compute too, which changes what there is to model.
+~ Hawkins, Hinton and Sandberg ask how a cortex computes and how one might be copied. Levin's talks argue that cells and tissues compute too, which changes what there is to model.
 4y43qwS8fl4 | Hawkins on why the neocortex works on principles unlike a traditional computer.
 izO2_mCvFaw | Hawkins on what the brain implies for machine intelligence.
 -EVqrDlAqYo | A long conversation on his Thousand Brains theory.
@@ -49,7 +49,7 @@ YnObwxJZpZc | A discussion of his paper The Computational Boundary of a Self: sc
 p3lsYlod5OU | The three-hour conversation: life, embryogenesis, xenobots.
 
 @ learn | How machines learn | The people who built the field on learning, reinforcement, compression and where it breaks.
-~ For your RL work. Silver gives the framing that the rest builds on. Rae argues that good prediction is compression, close to the trade-off your policy-complexity idea measures. Stanley, Vapnik and Yang come at the limits from three directions: search, theory and mathematics.
+~ Silver supplies the framing for reinforcement learning, and Rae argues that good prediction is compression. Stanley, Vapnik and Yang come at the limits from three directions: open-ended search, statistical theory and mathematics.
 VdIURAu1-aU | Hinton's 2010 talk on learning deep networks one layer at a time from unlabeled data.
 2pWv7GOvuf0 | The opening lecture of Silver's reinforcement learning course.
 ld28AU7DDB4 | Silver on classic games as a case study in reinforcement learning.
@@ -67,7 +67,7 @@ qbIk7-JPB2c | Bubeck on early GPT-4 experiments. A claim-heavy talk, so watch it
 + DeepMind x UCL: Introduction to Reinforcement Learning, 10 lectures | https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ | Silver's full course.
 
 @ scratch | Build it from scratch | Karpathy builds backpropagation, a language model and GPT live, line by line.
-~ You have read the theory, so this is the implementation. Typing these through is the cheapest way to make the math yours, and it is the shortest path from your reading to code you can modify.
+~ The implementation companion to the theory. Writing these programs along with Karpathy is the quickest way to understand backpropagation, language models and GPT well enough to change them.
 VMj-3S1tku0 | Building micrograd, a backpropagation engine, from nothing.
 PaCmpygFfXo | Building makemore, a character-level language model.
 q8SA3rM6ckI | Doing backpropagation by hand through a whole network.
@@ -77,7 +77,7 @@ zjkBMFhNj_g | An hour-long introduction to large language models.
 + Neural Networks: Zero to Hero, 10 videos | https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ | Karpathy's full series.
 
 @ proof | Computation and proof | From SICP through types and constructive math to the limits of what can be computed.
-~ You have been working through intuitionistic proofs, and Wadler, Bauer and Harper are where that road goes. Sussman and SICP supply the programming half, and Sipser and Aaronson the limits.
+~ Sussman and SICP treat programming as the study of composition. Wadler, Bauer and Harper take proofs, types and constructive mathematics further, and Sipser and Aaronson cover the limits of computation.
 2Op3QLzMgSY | The first lecture of MIT's 1986 Structure and Interpretation of Computer Programs course.
 HB5TrK7A4pI | Sussman on how, after 60 years, we have only begun to understand composition and abstraction.
 IOiZatlZtGU | Wadler on propositions as types, the link between proofs and programs.
@@ -91,7 +91,7 @@ msp2y_Y5MLE | Sipser's public lecture on P versus NP.
 + MIT 6.001 Structure and Interpretation, 40 lectures | https://www.youtube.com/playlist?list=PLE18841CABEA24090 | The full 1986 course.
 
 @ metal | Down to the metal | From how chips are made to how an operating system should treat the hardware under it.
-~ You have the Xinu and OS class work and the Silberschatz book. This goes under and beside that: the physical machine, how CPUs and caches shape fast code, and the people who built Unix explaining their choices. Ben Eater's build gives the part books can't.
+~ The physical machine and the software closest to it: how chips are made, how CPUs and caches shape fast code, and how the people behind Unix explain their choices. Ben Eater's builds show the hardware working.
 NGFhc8R_uO4 | How modern computer chips are manufactured, from a 2009 talk.
 LnzuMJLZRdU | Part one of building a 6502 computer from scratch.
 yl8vPW5hydQ | How a CPU reads machine code, on the 6502.
@@ -114,7 +114,7 @@ lJ8ydIuPFeU | Tene on the common pitfalls in measuring latency.
 + Building an 8-bit breadboard computer, 44 videos | https://www.youtube.com/playlist?list=PLowKtXNTBypGqImE405J2565dvjafglHU | His other full build.
 
 @ design | Design that lasts | Engelbart, Kay, Victor, Hickey and Armstrong on what makes systems simple, live and long-lived.
-~ You build tools constantly, and these are the talks other builders keep passing around. The arc: what computers were supposed to be, then how to keep a design simple, then how to keep it running.
+~ Talks that programmers keep passing around. The arc runs from what computers were supposed to be, to how to keep a design simple, to how to keep a system running.
 yJDv-zdhzMY | Engelbart's 1968 demonstration of technologies that are now commonplace.
 uknEhXyZgsg | Dan Ingalls demonstrating the Smalltalk environment on the Alto.
 oKg1hTOQXoY | Kay's seminal 1997 OOPSLA keynote.
@@ -133,9 +133,9 @@ _ahvzDzKdB0 | Steele on designing a language that its users can grow.
 8Ab3ArE8W3s | Rusher on why programs should be live, not dead.
 ZSRHeXYDLko | Blow on how software gets made, and what he argues that means for civilization.
 
-@ think | How to think and do research | Choosing problems, explaining ideas, writing, and judging your own judgment.
-~ These are the working skills of research. Hamming on choosing important problems, Feynman on explaining and understanding, McEnerney and Winston and Pinker on writing and speaking, and Kahneman on the limits of your own judgment.
-AD4b-52jtos | Hamming's opening lecture, aimed at preparing you for your technical future.
+@ think | How to think and do research | Choosing problems, explaining ideas, writing, and knowing the limits of judgment.
+~ The working skills of research: Hamming on choosing important problems, Feynman on explaining and understanding, McEnerney, Winston and Pinker on writing and speaking, and Kahneman on the limits of judgment.
+AD4b-52jtos | Hamming's opening lecture, on preparing for a technical future.
 a1zDuOPkMSw | Hamming's You and Your Research.
 EKWGGDXe5MA | Feynman's computer science lecture on hardware, software and heuristics.
 P1ww1IXRfTA | All six Fun to Imagine episodes with Feynman, 66 minutes.
@@ -148,7 +148,7 @@ uEFrE6cgVNY | Stefik on evaluating programming languages with evidence, not just
 g1ib43q3uXQ | Hermans on how to teach programming and other things.
 
 @ worlds | Worlds that run | Games and simulation: how the people who ship them make them feel alive and stay fast.
-~ You build games constantly. These are the talks by the makers, on feel, design, engineering, rendering and the history underneath, plus chess engines, for Tactics Lab.
+~ Talks by the people who make games, on feel, design, engineering and rendering, plus the history underneath and chess engines.
 wt-iVFxgFWk | Carmack's QuakeCon 2012 keynote.
 JjDsP5n2kSM | Blow on how to program independent games.
 MtzCLd93SyU | Meier's GDC talk on the psychology of game design.
